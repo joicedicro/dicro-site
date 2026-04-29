@@ -7,52 +7,81 @@
 
 <style>
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background: #f8f6f2;
-    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
 }
 
+/* TOPO */
 header {
-    background: #a8843b;
+    background: linear-gradient(135deg, #0b3d2e, #a8843b);
     color: white;
-    padding: 40px 20px;
+    text-align: center;
+    padding: 50px 20px;
 }
 
 h1 {
-    margin: 0;
-    font-size: 28px;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 p {
     font-size: 18px;
 }
 
+/* BOTÃO */
 .botao {
     display: inline-block;
     margin-top: 20px;
-    padding: 15px 25px;
+    padding: 15px 30px;
     background: #25d366;
     color: white;
     font-size: 18px;
-    text-decoration: none;
     border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+/* SEÇÕES */
 .section {
     padding: 40px 20px;
+    text-align: center;
 }
 
+/* SERVIÇOS */
 .servicos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
+    margin-top: 20px;
 }
 
 .card {
     background: white;
     padding: 20px;
     border-radius: 10px;
+    font-weight: bold;
+}
+
+/* LOCAL */
+.local {
+    background: #0b3d2e;
+    color: white;
+    padding: 40px 20px;
+}
+
+/* WHATSAPP FLUTUANTE */
+.whatsapp-fixo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    padding: 15px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 </style>
 
@@ -62,9 +91,9 @@ p {
 
 <header>
 <h1>Seu sorriso muda tudo 😁</h1>
-<p>Atendimento humanizado em Mesquita</p>
+<p>Odontologia especializada em Mesquita</p>
 
-<a class="botao" href="https://wa.me/5521971600874?text=Olá,%20vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta">
+<a class="botao" href="https://wa.me/5521971600874?text=Olá,%20vim%20pelo%20site%20e%20quero%20agendar%20uma%20avaliação">
 📲 AGENDAR PELO WHATSAPP
 </a>
 </header>
@@ -73,9 +102,9 @@ p {
 <h2>Tratamentos</h2>
 
 <div class="servicos">
-<div class="card">Ortodontia</div>
-<div class="card">Implantes</div>
-<div class="card">Limpeza</div>
+<div class="card">Aparelho Ortodôntico</div>
+<div class="card">Implantes Dentários</div>
+<div class="card">Próteses Dentárias</div>
 <div class="card">Harmonização Facial</div>
 </div>
 </div>
@@ -83,10 +112,29 @@ p {
 <div class="section">
 <h2>Fale conosco agora</h2>
 
-<a class="botao" href="https://wa.me/5521971600874?text=Olá,%20quero%20agendar%20uma%20consulta">
+<a class="botao" href="https://wa.me/5521971600874?text=Quero%20agendar%20uma%20consulta">
 💬 CHAMAR NO WHATSAPP
 </a>
 </div>
+
+<div class="local">
+<h2>📍 Nossa localização</h2>
+<p>Praça João Luiz do Nascimento, 28 - Loja 2<br>
+Centro, Mesquita - RJ<br>
+CEP: 26551-240</p>
+
+<a class="botao" href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826309,-43.4301023,17z" target="_blank">
+📍 COMO CHEGAR
+</a>
+
+<p style="margin-top:20px;">
+📞 WhatsApp: (21) 97160-0874
+</p>
+</div>
+
+<a class="whatsapp-fixo" href="https://wa.me/5521971600874">
+💬
+</a>
 
 </body>
 </html>
