@@ -8,90 +8,56 @@
 <style>
 body {
     margin: 0;
-    height: 100vh;
     font-family: Arial, sans-serif;
-
-    background-image: url('https://raw.githubusercontent.com/joicedicro/dicro-site/main/fundo.png');
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* camada escura leve */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
-}
-
-/* CARD CENTRAL */
-.card {
-    position: relative;
-    z-index: 2;
-
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(8px);
-
-    padding: 30px;
-    border-radius: 15px;
-
+    background: #0b3d2e;
     text-align: center;
-    width: 320px;
 }
 
-/* título */
-.card h1 {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 20px;
+/* container */
+.container {
+    padding: 20px;
+}
+
+/* imagem */
+.banner {
+    max-width: 100%;
+    width: 500px;
+    border-radius: 12px;
+    margin-top: 20px;
 }
 
 /* botões */
 .botao {
     display: block;
-    margin: 10px 0;
-    padding: 16px;
+    margin: 15px auto;
+    padding: 18px;
+    width: 280px;
 
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* whatsapp */
 .whatsapp {
     background: #25d366;
     color: white;
 }
 
-/* maps */
 .maps {
     background: linear-gradient(135deg, #caa44a, #a8843b);
     color: white;
-}
-
-/* hover */
-.botao:hover {
-    transform: scale(1.05);
 }
 </style>
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<div class="container">
 
-<div class="card">
+<img class="banner" src="https://raw.githubusercontent.com/joicedicro/dicro-site/main/sorriso.jpg">
 
-<h1>Agende sua avaliação</h1>
-
-<a class="botao whatsapp" href="https://wa.me/5521971600874?text=Quero%20agendar%20uma%20avaliação">
+<a class="botao whatsapp" href="https://wa.me/5521971600874">
 📲 FALAR NO WHATSAPP
 </a>
 
