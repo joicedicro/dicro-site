@@ -12,91 +12,94 @@ body {
     background: #f5f5f5;
 }
 
-/* TOPO */
-header {
-    background: linear-gradient(135deg, #0b3d2e, #a8843b);
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5');
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
 }
 
-h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+.hero h1 {
+    font-size: 36px;
 }
 
-p {
+.hero p {
     font-size: 18px;
 }
 
-/* BOTÃO */
 .botao {
     display: inline-block;
     margin-top: 20px;
     padding: 15px 30px;
     background: #25d366;
     color: white;
-    font-size: 18px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* SEÇÕES */
+/* SERVIÇOS */
 .section {
     padding: 40px 20px;
     text-align: center;
 }
 
-/* SERVIÇOS */
 .servicos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    margin-top: 20px;
 }
 
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
     font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* LOCAL */
-.local {
+/* FAIXA */
+.faixa {
     background: #0b3d2e;
     color: white;
     padding: 40px 20px;
 }
 
-/* WHATSAPP FLUTUANTE */
-.whatsapp-fixo {
+/* LOCAL */
+.local {
+    background: #022c22;
+    color: white;
+    padding: 40px 20px;
+}
+
+/* WHATSAPP FIXO */
+.whatsapp {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #25d366;
+    padding: 15px;
+    border-radius: 50%;
     color: white;
-    padding: 15px 18px;
-    border-radius: 50px;
-    font-size: 16px;
     text-decoration: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
-<h1>Seu sorriso muda tudo 😁</h1>
-<p>Odontologia especializada em Mesquita</p>
+<div class="hero">
+<h1>Mesquita agora tem<br>odontologia especializada</h1>
+<p>Cuidado completo para transformar seu sorriso e autoestima</p>
 
-<a class="botao" href="https://wa.me/5521971600874?text=Olá,%20vim%20pelo%20site%20e%20quero%20agendar%20uma%20avaliação">
-📲 AGENDAR PELO WHATSAPP
+<a class="botao" href="https://wa.me/5521971600874">
+📲 AGENDAR AGORA
 </a>
-</header>
+</div>
 
 <div class="section">
 <h2>Tratamentos</h2>
@@ -109,32 +112,33 @@ p {
 </div>
 </div>
 
-<div class="section">
-<h2>Fale conosco agora</h2>
+<div class="faixa">
+<h2>Sorria sem medo 😁</h2>
+<p>Confiança que se vê no espelho</p>
 
-<a class="botao" href="https://wa.me/5521971600874?text=Quero%20agendar%20uma%20consulta">
-💬 CHAMAR NO WHATSAPP
+<a class="botao" href="https://wa.me/5521971600874">
+💬 FALAR NO WHATSAPP
 </a>
 </div>
 
 <div class="local">
-<h2>📍 Nossa localização</h2>
-<p>Praça João Luiz do Nascimento, 28 - Loja 2<br>
-Centro, Mesquita - RJ<br>
-CEP: 26551-240</p>
+<h2>📍 Estamos na Praça da Telemar</h2>
 
-<a class="botao" href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826309,-43.4301023,17z/data=!3m1!4b1!4m6!3m5!1s0x9967001327eba3:0x33d1ee8ac42e77ff!8m2!3d-22.7826359!4d-43.4275274!16s%2Fg%2F11nbhj_3c7?entry=ttu" target="_blank">
+<p>
+Praça João Luiz do Nascimento, 28 - Loja 2<br>
+Centro, Mesquita - RJ
+</p>
+
+<a class="botao" href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826309,-43.4301023,17z/data=!3m1!4b1!4m6!3m5!1s0x9967001327eba3:0x33d1ee8ac42e77ff!8m2!3d-22.7826359!4d-43.4275274!16s%2Fg%2F11nbhj_3c7?entry=ttu">
 📍 COMO CHEGAR
 </a>
 
 <p style="margin-top:20px;">
-📞 WhatsApp: (21) 97160-0874
+📲 WhatsApp: (21) 97160-0874
 </p>
 </div>
 
-<a class="whatsapp-fixo" href="https://wa.me/5521971600874">
-💬
-</a>
+<a class="whatsapp" href="https://wa.me/5521971600874">💬</a>
 
 </body>
 </html>
