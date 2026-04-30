@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Dicró Odontologia</title>
 
 <style>
@@ -12,7 +11,7 @@ body {
     height: 100vh;
     font-family: Arial, sans-serif;
 
-    background: url('https://raw.githubusercontent.com/joicedicro/dicro-site/main/sorriso.jpg');
+    background: url('https://raw.githubusercontent.com/joicedicro/dicro-site/main/fundo.jpg');
     background-size: cover;
     background-position: center;
 
@@ -21,15 +20,15 @@ body {
     justify-content: center;
 }
 
-/* camada escura leve */
+/* leve escurecimento */
 .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.25);
 }
 
-/* container central */
+/* central */
 .container {
     position: relative;
     text-align: center;
@@ -39,26 +38,31 @@ body {
 /* botões */
 .botao {
     display: block;
-    margin: 10px auto;
+    margin: 12px auto;
     padding: 18px 30px;
-    width: 260px;
+    width: 280px;
 
-    background: linear-gradient(135deg, #caa44a, #a8843b);
-    color: white;
-    text-decoration: none;
     border-radius: 10px;
     font-size: 18px;
     font-weight: bold;
+    text-decoration: none;
 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* whatsapp */
 .whatsapp {
     background: #25d366;
+    color: white;
 }
 
-/* hover */
+/* maps */
+.maps {
+    background: linear-gradient(135deg, #caa44a, #a8843b);
+    color: white;
+}
+
+/* efeito */
 .botao:hover {
     transform: scale(1.05);
 }
@@ -71,11 +75,11 @@ body {
 
 <div class="container">
 
-<a class="botao whatsapp" href="https://wa.me/5521971600874?text=Quero%20agendar%20uma%20consulta">
+<a class="botao whatsapp" href="https://wa.me/5521971600874?text=Quero%20agendar%20uma%20avaliação">
 📲 FALAR NO WHATSAPP
 </a>
 
-<a class="botao" href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826309,-43.4301023,17z/data=!3m1!4b1!4m6!3m5!1s0x9967001327eba3:0x33d1ee8ac42e77ff!8m2!3d-22.7826359!4d-43.4275274!16s%2Fg%2F11nbhj_3c7?entry=ttu">
+<a class="botao maps" href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826309,-43.4301023,17z/data=!3m1!4b1!4m6!3m5!1s0x9967001327eba3:0x33d1ee8ac42e77ff!8m2!3d-22.7826359!4d-43.4275274!16s%2Fg%2F11nbhj_3c7?entry=ttu">
 📍 COMO CHEGAR
 </a>
 
