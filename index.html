@@ -3,183 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dicró Odontologia Especializada</title>
+
+<title>Dicró Odontologia</title>
 
 <style>
 body {
     margin: 0;
+    height: 100vh;
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
-}
 
-/* HERO */
-.hero {
-    position: relative;
-    height: 90vh;
     background: url('https://raw.githubusercontent.com/joicedicro/dicro-site/main/sorriso.jpg');
     background-size: cover;
     background-position: center;
+
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
+/* camada escura leve */
 .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
+    background: rgba(0,0,0,0.3);
 }
 
-.hero-content {
+/* container central */
+.container {
     position: relative;
-    color: white;
-    max-width: 600px;
-    padding: 40px;
+    text-align: center;
+    z-index: 1;
 }
 
-.logo {
-    width: 180px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: 38px;
-    line-height: 1.2;
-}
-
-.hero span {
-    color: #caa44a;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
+/* botões */
 .botao {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 25px;
-    background: #25d366;
+    display: block;
+    margin: 10px auto;
+    padding: 18px 30px;
+    width: 260px;
+
+    background: linear-gradient(135deg, #caa44a, #a8843b);
     color: white;
-    border-radius: 8px;
     text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
     font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* SERVIÇOS */
-.section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.servicos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* FAIXA */
-.faixa {
-    background: #0b3d2e;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-/* LOCAL */
-.local {
-    background: #022c22;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-/* WHATSAPP FIXO */
+/* whatsapp */
 .whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
     background: #25d366;
-    padding: 15px;
-    border-radius: 50%;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
+}
+
+/* hover */
+.botao:hover {
+    transform: scale(1.05);
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
 <div class="overlay"></div>
 
-<div class="hero-content">
-<img src="https://raw.githubusercontent.com/joicedicro/dicro-site/main/logo.png" class="logo">
+<div class="container">
 
-<h1>Seu <span>SORRISO</span> muda tudo</h1>
-<p>Cuidado completo para transformar seu sorriso e autoestima em Mesquita</p>
-
-<a class="botao" href="https://wa.me/5521971600874?text=Quero%20agendar%20uma%20avaliação">
-📲 AGENDAR AGORA
+<a class="botao whatsapp" href="https://wa.me/5521971600874?text=Quero%20agendar%20uma%20consulta">
+📲 FALAR NO WHATSAPP
 </a>
-</div>
-</div>
-
-<!-- SERVIÇOS -->
-<div class="section">
-<h2>Tratamentos</h2>
-
-<div class="servicos">
-<div class="card">Aparelho Ortodôntico</div>
-<div class="card">Implantes Dentários</div>
-<div class="card">Próteses Dentárias</div>
-<div class="card">Harmonização Facial</div>
-</div>
-</div>
-
-<!-- FAIXA -->
-<div class="faixa">
-<h2>Sorria sem medo 😁</h2>
-<p>Confiança que se vê no espelho</p>
-
-<a class="botao" href="https://wa.me/5521971600874">
-💬 FALAR NO WHATSAPP
-</a>
-</div>
-
-<!-- LOCAL -->
-<div class="local">
-<h2>📍 Estamos na Praça da Telemar</h2>
-
-<p>
-Praça João Luiz do Nascimento, 28 - Loja 2<br>
-Centro, Mesquita - RJ<br>
-CEP: 26551-240
-</p>
 
 <a class="botao" href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826309,-43.4301023,17z/data=!3m1!4b1!4m6!3m5!1s0x9967001327eba3:0x33d1ee8ac42e77ff!8m2!3d-22.7826359!4d-43.4275274!16s%2Fg%2F11nbhj_3c7?entry=ttu">
 📍 COMO CHEGAR
 </a>
 
-<p style="margin-top:20px;">
-📲 WhatsApp: (21) 97160-0874
-</p>
 </div>
-
-<!-- BOTÃO FLUTUANTE -->
-<a class="whatsapp" href="https://wa.me/5521971600874">💬</a>
 
 </body>
 </html>
