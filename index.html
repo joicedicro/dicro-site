@@ -45,14 +45,13 @@
       padding: 40px 20px 60px;
     }
 
-    /* overlay escuro sobre a foto para legibilidade */
+    /* overlay sobre o novo fundo claro — escurece o suficiente para o texto branco ser legível */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(160deg, rgba(7,30,20,0.82) 0%, rgba(13,59,46,0.70) 50%, rgba(7,20,14,0.88) 100%),
-        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(201,168,76,0.12) 0%, transparent 70%);
+        linear-gradient(160deg, rgba(7,30,20,0.78) 0%, rgba(13,59,46,0.60) 40%, rgba(7,20,14,0.72) 100%);
       pointer-events: none;
     }
 
