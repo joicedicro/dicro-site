@@ -31,8 +31,7 @@
       color: var(--branco);
       overflow-x: hidden;
     }
-
-    /* ── HERO ── */
+/* ── HERO ── */
     .hero {
       min-height: 100vh;
       background: url('fundo2.png') center center / cover no-repeat;
@@ -41,7 +40,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      padding: 40px 20px 60px;
+      padding: 60px 20px 60px; /* Aumentado o respiro do topo */
     }
 
     .hero::before {
@@ -75,7 +74,7 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      max-width: 800px;
+      max-width: 850px; /* Aumentado para dar mais abertura no desktop */
       animation: fadeUp 1s ease both;
     }
 
@@ -88,15 +87,14 @@
       display: inline-flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: -10px; /* Margem negativa para puxar o texto de baixo para mais perto */
       width: 100%;
       animation: fadeUp 1s ease 0.2s both;
     }
 
-    /* Ajustado para o dobro do tamanho máximo anterior */
     .logo-img {
-      max-width: 600px;
-      width: 100%;
+      max-width: 480px; /* Tamanho ideal para desktops sem estourar a nitidez */
+      width: 65%;       /* Ocupa uma área maior da largura do bloco */
       height: auto;
       object-fit: contain;
     }
@@ -105,7 +103,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 0 auto 28px;
+      margin: 0 auto 24px;
       width: fit-content;
     }
     .divisor-ouro span {
@@ -124,47 +122,15 @@
 
     .hero-tagline {
       font-family: 'Lato', sans-serif;
-      font-size: clamp(0.75rem, 2vw, 0.9rem);
-      font-weight: 300;
+      font-size: clamp(0.8rem, 2vw, 0.95rem);
+      font-weight: 400; /* Um pouco mais de peso para destacar */
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--ouro-claro);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       animation: fadeUp 1s ease 0.4s both;
     }
-
-    .hero-titulo {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 7vw, 4.2rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--branco);
-      margin-bottom: 8px;
-      animation: fadeUp 1s ease 0.5s both;
-    }
-
-    .hero-titulo em {
-      font-style: italic;
-      background: linear-gradient(135deg, var(--ouro), var(--ouro-brilho));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitulo {
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-      font-weight: 300;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 44px;
-      line-height: 1.6;
-      animation: fadeUp 1s ease 0.6s both;
-    }
-
-    .hero-subtitulo strong {
-      color: var(--ouro-claro);
-      font-weight: 700;
-    }
-
+ 
     .cta-group {
       display: flex;
       flex-wrap: wrap;
@@ -570,10 +536,13 @@
     }
 
     /* ── RESPONSIVO ── */
-    @media (max-width: 480px) {
+   @media (max-width: 480px) {
       .btn { padding: 14px 22px; font-size: 0.85rem; }
       .cta-group { flex-direction: column; align-items: center; }
-      .logo-img { max-width: 340px; } /* Proporcionalmente maior no celular também */
+      
+      /* Mantém o logo com um ótimo destaque no celular e força a aproximação */
+      .logo-img { max-width: 340px; width: 90%; } 
+      .logo-wrap { margin-bottom: 5px; }
     }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7SREJMBQ6"></script>
