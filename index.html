@@ -7,7 +7,7 @@
   <meta name="description" content="Dicró Odontologia Especializada em Mesquita, RJ. Dra. Joice Dicró — Cirurgiã-Dentista CRO-RJ 055701. Aparelho ortodôntico, implantes, próteses e harmonização facial."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --verde: #0d3b2e;
@@ -35,8 +35,7 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background:
-        url('fundo2.png') center center / cover no-repeat;
+      background: url('fundo2.png') center center / cover no-repeat;
       position: relative;
       display: flex;
       align-items: center;
@@ -45,17 +44,14 @@
       padding: 40px 20px 60px;
     }
 
-    /* overlay sobre o novo fundo claro — escurece o suficiente para o texto branco ser legível */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(160deg, rgba(7,30,20,0.78) 0%, rgba(13,59,46,0.60) 40%, rgba(7,20,14,0.72) 100%);
+      background: linear-gradient(160deg, rgba(7,30,20,0.78) 0%, rgba(13,59,46,0.60) 40%, rgba(7,20,14,0.72) 100%);
       pointer-events: none;
     }
 
-    /* partículas douradas decorativas */
     .sparkle {
       position: absolute;
       width: 6px; height: 6px;
@@ -88,7 +84,6 @@
       to   { opacity:1; transform: translateY(0); }
     }
 
-    /* Logo */
     .logo-wrap {
       display: inline-flex;
       flex-direction: column;
@@ -189,7 +184,6 @@
       font-weight: 700;
     }
 
-    /* Botões CTA */
     .cta-group {
       display: flex;
       flex-wrap: wrap;
@@ -238,7 +232,6 @@
 
     .btn svg { flex-shrink: 0; }
 
-    /* scroll indicator */
     .scroll-hint {
       position: absolute;
       bottom: 24px;
@@ -260,9 +253,7 @@
     }
 
     /* ── DIFERENCIAIS ── */
-    .section {
-      padding: 80px 20px;
-    }
+    .section { padding: 80px 20px; }
 
     .section-label {
       text-align: center;
@@ -289,7 +280,6 @@
       background-clip: text;
     }
 
-    /* Serviços */
     .servicos { background: linear-gradient(180deg, #0d3b2e 0%, #112f24 100%); }
 
     .grid-servicos {
@@ -329,9 +319,11 @@
     }
 
     .card-servico .icone img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 80px;
+      max-height: 80px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
       border-radius: 10px;
       transition: transform 0.4s ease;
     }
@@ -349,7 +341,6 @@
       color: var(--ouro-claro);
     }
 
-    /* Diferenciais */
     .diferenciais { background: #0a2e22; }
 
     .grid-diferenciais {
@@ -602,29 +593,25 @@
     }
   </style>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7SREJMBQ6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-B7SREJMBQ6');
-</script>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7SREJMBQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag()){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B7SREJMBQ6');
+  </script>
 </head>
 <body>
 
 <!-- FAB WhatsApp flutuante -->
-<a class="fab-wa"
-   href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta."
-   target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+<a class="fab-wa" href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section class="hero">
-  <!-- sparkles decorativos -->
   <div class="sparkle"></div>
   <div class="sparkle"></div>
   <div class="sparkle"></div>
@@ -632,12 +619,10 @@
   <div class="sparkle"></div>
 
   <div class="hero-content">
-
     <!-- Logo -->
     <div class="logo-wrap">
       <svg class="logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M32 54s-20-12.5-20-26a12 12 0 0124 0 12 12 0 0124 0C60 41.5 32 54 32 54z"
-              fill="none" stroke="url(#g1)" stroke-width="2.5"/>
+        <path d="M32 54s-20-12.5-20-26a12 12 0 0124 0 12 12 0 0124 0C60 41.5 32 54 32 54z" fill="none" stroke="url(#g1)" stroke-width="2.5"/>
         <path d="M24 30 a8 8 0 0016 0" fill="none" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
         <path d="M27 22v8M37 22v8" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
         <defs>
@@ -668,17 +653,13 @@
     </p>
 
     <div class="cta-group">
-      <a class="btn btn-whatsapp"
-         href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta."
-         target="_blank" rel="noopener">
+      <a class="btn btn-whatsapp" href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta." target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
         Agende sua consulta
       </a>
-      <a class="btn btn-maps"
-         href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826359,-43.4275274,17z/data=!3m1!4b1!4m6!3m5!1s0x9967001327eba3:0x33d1ee8ac42e77ff!8m2!3d-22.7826359!4d-43.4275274!16s%2Fg%2F11nbhj_3c7?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D"
-         target="_blank" rel="noopener">
+      <a class="btn btn-maps" href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826359,-43.4275274,17z/" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
           <circle cx="12" cy="10" r="3"/>
@@ -702,49 +683,47 @@
   <h2 class="section-titulo">Especialidades <span>Odontológicas</span></h2>
 
   <div class="grid-servicos">
-
     <div class="card-servico">
       <div class="icone">
-        <img src="ortodontia.png" alt="Aparelho Ortodôntico" width="36" height="36" style="object-fit:contain;">
+        <img src="ortodontia.png" alt="Aparelho Ortodôntico" loading="lazy">
       </div>
       <h3>Aparelho<br>Ortodôntico</h3>
     </div>
 
     <div class="card-servico">
       <div class="icone">
-        <img src="implante.png" alt="Implantes Dentários" width="36" height="36" style="object-fit:contain;">
+        <img src="implante.png" alt="Implantes Dentários" loading="lazy">
       </div>
       <h3>Implantes<br>Dentários</h3>
     </div>
 
     <div class="card-servico">
       <div class="icone">
-        <img src="protese.png" alt="Próteses Dentárias" width="36" height="36" style="object-fit:contain;">
+        <img src="protese.png" alt="Próteses Dentárias" loading="lazy">
       </div>
       <h3>Próteses<br>Dentárias</h3>
     </div>
 
     <div class="card-servico">
       <div class="icone">
-        <img src="harmonizacao.png" alt="Harmonização Facial" width="36" height="36" style="object-fit:contain;">
+        <img src="harmonizacao.png" alt="Harmonização Facial" loading="lazy">
       </div>
       <h3>Harmonização<br>Facial</h3>
     </div>
 
     <div class="card-servico">
       <div class="icone">
-        <img src="cirurgia.png" alt="Cirurgia Oral" width="36" height="36" style="object-fit:contain;">
+        <img src="cirurgia.png" alt="Cirurgia Oral" loading="lazy">
       </div>
       <h3>Cirurgia<br>Oral</h3>
     </div>
 
     <div class="card-servico">
       <div class="icone">
-        <img src="dentistica.png" alt="Dentística Estética" width="36" height="36" style="object-fit:contain;">
+        <img src="dentistica.png" alt="Dentística Estética" loading="lazy">
       </div>
       <h3>Dentística<br>Estética</h3>
     </div>
-
   </div>
 </section>
 
@@ -754,7 +733,6 @@
   <h2 class="section-titulo">Nossa <span>Proposta de Cuidado</span></h2>
 
   <div class="grid-diferenciais">
-
     <div class="card-dif">
       <div class="dif-icone">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -807,7 +785,6 @@
         <p>Consulta inicial detalhada para traçar o melhor plano de tratamento para você.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -816,7 +793,7 @@
   <p class="section-label">A profissional</p>
   <div class="dra-card">
     <div class="dra-avatar">
-      <img src="joice.jpg" alt="Dra. Joice Dicró — Cirurgiã-Dentista">
+      <img src="joice.jpg" alt="Dra. Joice Dicró — Cirurgiã-Dentista" loading="lazy">
     </div>
     <div class="dra-nome">Dra. Joice Dicró</div>
     <div class="dra-cargo">Cirurgiã-Dentista</div>
@@ -833,7 +810,7 @@
 
 <!-- ═══════════════════════════════ FRASE ═══════════════════════════════ -->
 <section class="frase-section">
-  <blockquote>
+  blockquote>
     "Sorria sem medo.<br>A confiança que se vê no espelho."
     <cite>— Dicró Odontologia Especializada</cite>
   </blockquote>
@@ -845,17 +822,13 @@
   <h2 class="section-titulo" style="margin-bottom:40px;">Agende sua <span>Consulta</span></h2>
 
   <div class="contato-ctas">
-    <a class="btn btn-whatsapp"
-       href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta."
-       target="_blank" rel="noopener">
+    <a class="btn btn-whatsapp" href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta." target="_blank" rel="noopener">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
       Falar no WhatsApp
     </a>
-    <a class="btn btn-maps"
-       href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826359,-43.4275274,17z/data=!3m1!4b1!4m6!3m5!1s0x9967001327eba3:0x33d1ee8ac42e77ff!8m2!3d-22.7826359!4d-43.4275274!16s%2Fg%2F11nbhj_3c7?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D"
-       target="_blank" rel="noopener">
+    <a class="btn btn-maps" href="https://www.google.com/maps/place/Dicr%C3%B3+Odontologia+Especializada/@-22.7826359,-43.4275274,17z/" target="_blank" rel="noopener">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
         <circle cx="12" cy="10" r="3"/>
@@ -874,9 +847,7 @@
     </div>
     <div class="contato-bloco">
       <h4>Contato</h4>
-      <a href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta." target="_blank">
-        (21) 97160-0874
-      </a>
+      <a href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta." target="_blank">(21) 97160-0874</a>
       <a href="https://www.instagram.com/dicro.odontologia" target="_blank">@dicro.odontologia</a>
       <a href="https://www.dicro.com.br">www.dicro.com.br</a>
     </div>
@@ -907,7 +878,6 @@
     </div>
     <div class="rodape-tagline">© 2026 Dicró Odontologia Especializada</div>
   </div>
-
 </section>
 
 </body>
