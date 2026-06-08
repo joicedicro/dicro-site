@@ -1,4 +1,5 @@
-User-agent: *
+User-agent: Googlebot
 Allow: /
 
-Sitemap: https://www.dicro.com.br/sitemap.xml
+User-agent: *
+Allow: /
