@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dicró Odontologia Especializada — Mesquita, RJ | Dra. Joice Dicró</title>
+<meta name="description" content="Dicró Odontologia Especializada em Mesquita, RJ. Dra. Joice Araújo de Oliveira Dicró — Cirurgiã-Dentista CRO-RJ 055701. Ortodontia, próteses, implantes e clínica geral. Agende sua consulta pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Dicró Odontologia Especializada",
+  "description": "Consultório odontológico em Mesquita, RJ. Ortodontia, próteses, implantes e clínica geral.",
+  "url": "https://dicro.com.br",
+  "telephone": "+5521971600874",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Praça João Luiz do Nascimento, 28 Loja 2",
+    "addressLocality": "Mesquita",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  },
+  "sameAs": ["https://www.instagram.com/dicro.odontologia"]
+}
+</script>
+<style>
+:root{
+  --navy:#0d3b2e;        /* verde Dicró */
+  --navy-deep:#072b21;   /* verde profundo */
+  --green-mid:#1a5c45;
+  --gold:#c9a84c;
+  --gold-soft:#e2c06a;
+  --ivory:#fdf6e9;       /* creme */
+  --ink:#1a1a1a;
+  --mist:#5E6B7A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;color:var(--ink);background:var(--ivory);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;color:var(--navy);line-height:1.15}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--navy-deep);font-weight:600;padding:14px 28px;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s;font-size:1rem}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.35)}
+.btn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--ivory);border:1.5px solid rgba(253,246,233,.45)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold-soft);box-shadow:none}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(7,43,33,.96);backdrop-filter:blur(8px)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--ivory);text-decoration:none;letter-spacing:.02em}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{color:rgba(253,246,233,.85);text-decoration:none;font-size:.92rem;font-weight:500}
+.nav-links a:hover{color:var(--gold-soft)}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--ivory);padding:96px 0 110px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:1.5px solid rgba(201,168,76,.25)}
+.hero::before{content:"";position:absolute;right:-40px;top:-40px;width:260px;height:260px;border-radius:50%;border:1.5px solid rgba(201,168,76,.18)}
+.hero h1{color:var(--ivory);font-size:clamp(2.1rem,5vw,3.4rem);max-width:640px}
+.hero h1 em{font-style:normal;color:var(--gold-soft)}
+.hero p{margin:22px 0 34px;max-width:520px;color:rgba(253,246,233,.85);font-size:1.08rem}
+.hero .cred{margin-top:30px;font-size:.85rem;color:rgba(253,246,233,.65)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* Specialty cards */
+.section{padding:88px 0}
+.section-head{max-width:560px;margin-bottom:48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:#fff;border-radius:16px;padding:30px 26px;border:1px solid rgba(13,59,46,.10);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,59,46,.14)}
+.card.has-img{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.card-img{height:170px;background:linear-gradient(160deg,#1a5c45,#0d3b2e);position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.card-body{padding:26px}
+.card.has-img:hover .card-img img{transform:scale(1.04)}
+.card-img img{transition:transform .35s ease}
+.card h3{font-size:1.22rem;margin-bottom:10px}
+.card p{font-size:.94rem;color:var(--mist)}
+.card .tooth{width:42px;height:42px;border-radius:12px;background:var(--navy);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:18px}
+
+/* Doctor */
+.doctor{background:var(--navy);color:var(--ivory)}
+.doctor-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+@media(max-width:760px){.doctor-grid{grid-template-columns:1fr}}
+.doctor h2{color:var(--ivory)}
+.doctor p{color:rgba(253,246,233,.85);margin-top:16px}
+.portrait{aspect-ratio:4/5;border-radius:18px;background:linear-gradient(160deg,#1a5c45,#072b21);display:flex;align-items:flex-end;justify-content:center;border:1px solid rgba(201,168,76,.4);overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait small{padding:14px;color:rgba(253,246,233,.5);font-size:.78rem;text-align:center}
+.cro-badge{display:inline-block;margin-top:22px;padding:10px 18px;border:1.5px solid var(--gold);border-radius:10px;color:var(--gold-soft);font-weight:600;font-size:.95rem;letter-spacing:.03em}
+
+/* Promotions */
+.promos .card{position:relative;border-top:4px solid var(--gold)}
+.promos .card a{display:inline-block;margin-top:16px;color:var(--navy);font-weight:600;text-decoration:none;font-size:.92rem}
+.promos .card a:hover{color:var(--gold)}
+.promo-note{margin-top:26px;font-size:.82rem;color:var(--mist)}
+
+/* Legacy strip — signature element */
+.legacy{background:var(--gold);color:var(--navy-deep);padding:54px 0;position:relative;overflow:hidden}
+.legacy h2{color:var(--navy-deep);font-size:clamp(1.4rem,3vw,2rem);max-width:720px}
+.legacy p{margin-top:10px;max-width:680px;font-weight:500}
+
+/* Location */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:760px){.loc-grid{grid-template-columns:1fr}}
+.loc-grid ul{list-style:none;margin-top:18px}
+.loc-grid li{padding:10px 0;border-bottom:1px solid rgba(13,59,46,.10);font-size:.97rem}
+.loc-grid li strong{color:var(--navy)}
+.map-frame{border-radius:16px;overflow:hidden;border:1px solid rgba(13,59,46,.14);min-height:320px}
+.map-frame iframe{width:100%;height:100%;border:0;min-height:320px}
+
+/* Footer */
+footer{background:var(--navy-deep);color:rgba(253,246,233,.7);padding:44px 0;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+footer strong{color:var(--gold-soft)}
+
+/* WhatsApp float */
+.wa-float{position:fixed;bottom:22px;right:22px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.28);z-index:60;text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#">Dicró <span>Odontologia</span></a>
+      <ul class="nav-links">
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#dra-joice">Dra. Joice</a></li>
+        <li><a href="#condicoes">Condições especiais</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+      </ul>
+      <a class="btn" style="padding:10px 20px;font-size:.9rem" href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta.">Agendar consulta</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Dicró Odontologia Especializada · Mesquita · RJ</span>
+    <h1>Seu sorriso em <em>nossas mãos</em>.</h1>
+    <p>Ortodontia, próteses, implantes e odontologia geral no centro de Mesquita, com atendimento próximo, plano de tratamento claro e horários que cabem na sua rotina. Cuidar do seu sorriso é cuidar de você.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta.">Agendar pelo WhatsApp</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Dicr%C3%B3+Odontologia+Especializada+Pra%C3%A7a+Jo%C3%A3o+Luiz+do+Nascimento+28+Mesquita+RJ" target="_blank" rel="noopener">📍 Como chegar</a>
+    </div>
+    <p class="cred">Responsável técnica: Dra. Joice Araújo de Oliveira Dicró — Cirurgiã-Dentista · CRO-RJ 055701</p>
+  </div>
+</section>
+
+<section class="section" id="especialidades">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Especialidades</span>
+      <h2>Tratamentos para cada fase do seu sorriso</h2>
+    </div>
+    <div class="grid">
+      <div class="card has-img">
+        <div class="card-img"><img src="/ortodontia.png" alt="Aparelho ortodôntico" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-body">
+          <h3>Ortodontia</h3>
+          <p>Aparelhos fixos e alinhamento dentário com acompanhamento mensal. Avaliamos o seu caso em consulta e montamos um plano de tratamento sob medida.</p>
+        </div>
+      </div>
+      <div class="card has-img">
+        <div class="card-img"><img src="/protese.png" alt="Prótese dentária" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-body">
+          <h3>Próteses dentárias</h3>
+          <p>Próteses totais e parciais para devolver a função de mastigar e a confiança de sorrir, com ajuste cuidadoso e acompanhamento após a entrega.</p>
+        </div>
+      </div>
+      <div class="card has-img">
+        <div class="card-img"><img src="/implante.png" alt="Implante dentário" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-body">
+          <h3>Implantes</h3>
+          <p>Reposição de dentes perdidos com planejamento em parceria com especialista em implantodontia, do exame inicial à prótese final.</p>
+        </div>
+      </div>
+      <div class="card has-img">
+        <div class="card-img"><img src="/cirurgia.png" alt="Atendimento odontológico" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-body">
+          <h3>Clínica geral e urgências</h3>
+          <p>Limpeza, restaurações, extrações e atendimento para dor de dente. Entre em contato e organizamos seu atendimento o quanto antes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section doctor" id="dra-joice">
+  <div class="wrap doctor-grid">
+    <div class="portrait"><img src="/joice.jpg" alt="Dra. Joice Dicró" loading="lazy" onerror="this.remove()"></div>
+    <div>
+      <span class="eyebrow">Responsável técnica</span>
+      <h2>Dra. Joice Dicró</h2>
+      <p>Cirurgiã-dentista com atuação dedicada à ortodontia, a Dra. Joice Dicró é a responsável técnica do consultório e lidera os atendimentos ao lado de especialistas parceiros — garantindo que cada paciente tenha um plano de tratamento claro, da primeira consulta à conclusão.</p>
+      <p>Aqui, o atendimento é de bairro no melhor sentido: você é recebido pelo nome, com tempo de consulta respeitado e acompanhamento de perto em cada etapa.</p>
+      <span class="cro-badge">Dra. Joice Araújo de Oliveira Dicró · CRO-RJ 055701</span>
+    </div>
+  </div>
+</section>
+
+<section class="legacy">
+  <div class="wrap">
+    <h2>Dicró: um nome que Mesquita conhece e confia.</h2>
+    <p>A família Dicró tem suas raízes nesta cidade há gerações. Hoje, é a Dra. Joice Dicró quem leva esse nome adiante — cuidando dos sorrisos de quem é daqui.</p>
+    <p style="margin-top:18px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem">"Sorria sem medo. A confiança que se vê no espelho."</p>
+  </div>
+</section>
+
+<section class="section promos" id="condicoes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Condições especiais</span>
+      <h2>Facilidades para começar seu tratamento</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Parcelamento facilitado</h3>
+        <p>Tratamentos de ortodontia e prótese com condições de pagamento que cabem no seu orçamento.</p>
+        <a href="https://wa.me/5521971600874?text=Gostaria%20de%20saber%20as%20condi%C3%A7%C3%B5es%20de%20parcelamento.">Consultar condições no WhatsApp →</a>
+      </div>
+      <div class="card">
+        <h3>Condições do mês</h3>
+        <p>Todos os meses preparamos condições especiais em tratamentos selecionados. Pergunte quais estão valendo agora.</p>
+        <a href="https://wa.me/5521971600874?text=Quais%20s%C3%A3o%20as%20condi%C3%A7%C3%B5es%20especiais%20deste%20m%C3%AAs%3F">Ver condições deste mês →</a>
+      </div>
+      <div class="card">
+        <h3>Atendimento para dor</h3>
+        <p>Está com dor de dente? Chame no WhatsApp e organizamos seu atendimento com prioridade.</p>
+        <a href="https://wa.me/5521971600874?text=Estou%20com%20dor%20de%20dente%20e%20preciso%20de%20atendimento.">Falar agora →</a>
+      </div>
+    </div>
+    <p class="promo-note">Valores e condições são informados individualmente em consulta ou pelo WhatsApp, conforme as normas do Conselho Federal de Odontologia.</p>
+  </div>
+</section>
+
+<section class="section" id="localizacao">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Onde estamos</span>
+      <h2>No coração de Mesquita</h2>
+    </div>
+    <div class="loc-grid">
+      <div>
+        <ul>
+          <li><strong>Endereço:</strong> Praça João Luiz do Nascimento, 28 — Loja 2 (Praça da Telemar), Mesquita/RJ</li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/5521971600874">(21) 97160-0874</a></li>
+          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/dicro.odontologia" rel="noopener">@dicro.odontologia</a></li>
+          <li><strong>Horário:</strong> Segunda a sexta, 9h às 18h · Sábado, 9h às 13h</li>
+        </ul>
+        <p style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta.">Agendar minha consulta</a> <a class="btn" style="background:transparent;color:var(--navy);border:1.5px solid var(--navy)" href="https://www.google.com/maps/search/?api=1&query=Dicr%C3%B3+Odontologia+Especializada+Pra%C3%A7a+Jo%C3%A3o+Luiz+do+Nascimento+28+Mesquita+RJ" target="_blank" rel="noopener">Ver no Google Maps</a></p>
+      </div>
+      <div class="map-frame">
+        <iframe title="Mapa — Dicró Odontologia em Mesquita" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Pra%C3%A7a+Jo%C3%A3o+Luiz+do+Nascimento,+28,+Mesquita,+RJ&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>Dicró Odontologia Especializada</strong><br>
+      Dra. Joice Araújo de Oliveira Dicró — Cirurgiã-Dentista · CRO-RJ 055701
+    </div>
+    <div>Praça João Luiz do Nascimento, 28 Loja 2 — Mesquita/RJ</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta." aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.9 5 2.3 7L4.5 28l6.3-1.7c1.6.9 3.4 1.4 5.2 1.4 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.7c-1.6 0-3.2-.4-4.6-1.2l-.3-.2-3.7 1 1-3.6-.2-.3c-1.2-1.6-1.9-3.6-1.9-5.5 0-5.4 4.4-9.9 9.7-9.9s9.7 4.4 9.7 9.9-4.4 9.8-9.7 9.8zm5.4-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+</body>
+</html>
+<!-- Versão de comparação: publicada em /novo. Quando aprovada, mover este arquivo para a raiz do repositório substituindo o index.html atual. -->
