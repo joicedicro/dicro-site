@@ -68,6 +68,30 @@
     font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.5px;white-space:nowrap;height:38px;}
   .add-btn:hover{background:var(--navy-soft);}
 
+  /* Odontograma */
+  .odonto{border:1px solid var(--line);border-radius:10px;padding:16px 12px;margin-bottom:20px;background:#fafcfe;}
+  .odonto h3{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:4px;}
+  .odonto .hint{font-size:11.5px;color:var(--muted);margin-bottom:14px;}
+  .arch{display:flex;flex-direction:column;gap:14px;align-items:center;}
+  .arch-row{display:flex;gap:14px;}
+  .quad{display:flex;gap:3px;}
+  .quad.right{flex-direction:row-reverse;}
+  .tooth{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;user-select:none;}
+  .tooth svg{width:24px;height:30px;transition:all .12s;}
+  .tooth .tnum{font-size:9.5px;color:var(--muted);font-variant-numeric:tabular-nums;}
+  .tooth .crown{fill:#fff;stroke:#9fb0c4;stroke-width:1.4;transition:all .12s;}
+  .tooth .root{fill:#fff;stroke:#9fb0c4;stroke-width:1.4;transition:all .12s;}
+  .tooth:hover .crown,.tooth:hover .root{stroke:var(--gold);}
+  .tooth.sel .crown,.tooth.sel .root{fill:var(--gold);stroke:var(--navy);}
+  .tooth.sel .tnum{color:var(--navy);font-weight:700;}
+  .arch-divider{width:100%;max-width:560px;border-top:1px dashed var(--line);}
+  .quad-gap{width:18px;}
+  .selected-teeth{margin-top:14px;font-size:12.5px;color:var(--navy);min-height:20px;}
+  .selected-teeth b{color:var(--muted);font-weight:600;}
+  .clear-teeth{background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);
+    font-size:11px;padding:3px 10px;cursor:pointer;margin-left:8px;font-family:inherit;}
+  .clear-teeth:hover{border-color:var(--gold);color:var(--navy);}
+
   /* Tabela */
   table{width:100%;border-collapse:collapse;margin-bottom:8px;}
   thead th{background:var(--navy);color:#fff;font-size:11px;letter-spacing:1px;text-transform:uppercase;
@@ -120,7 +144,7 @@
   @media print{
     body{background:#fff;padding:0;}
     .sheet{box-shadow:none;border-radius:0;max-width:100%;}
-    .actions,.picker,.del,.add-btn{display:none!important;}
+    .actions,.picker,.odonto,.del,.add-btn{display:none!important;}
     thead th:last-child{display:none;}
     tbody td:last-child{display:none;}
     .field input,textarea{border:none;}
@@ -156,6 +180,14 @@
       <div class="field"><label>Telefone</label><input type="text" id="pTel" placeholder="(21) "></div>
     </div>
 
+    <!-- Odontograma -->
+    <div class="odonto">
+      <h3>Odontograma</h3>
+      <div class="hint">Clique nos dentes para selecioná-los. Eles entram no procedimento ao adicionar.</div>
+      <div class="arch" id="arch"></div>
+      <div class="selected-teeth" id="selectedTeeth"><b>Nenhum dente selecionado</b></div>
+    </div>
+
     <!-- Seletor -->
     <div class="picker">
       <h3>Adicionar procedimento</h3>
@@ -165,8 +197,8 @@
           <select id="selProc"></select>
         </div>
         <div class="field">
-          <label>Dente / Região</label>
-          <input type="text" id="selDente" placeholder="Ex: 11">
+          <label>Dente / Região (extra)</label>
+          <input type="text" id="selDente" placeholder="Ex: arcada sup.">
         </div>
         <div class="field">
           <label>Valor (R$)</label>
@@ -263,6 +295,90 @@
   ];
 
   let itens = [];
+  let dentesSelecionados = [];
+
+  // ----- Odontograma FDI -----
+  // Quadrantes superiores: 1 (paciente direita, nossa esquerda) 18-11 ; 2 (esquerda) 21-28
+  // Quadrantes inferiores: 4 48-41 ; 3 31-38
+  const quadSupDir = [18,17,16,15,14,13,12,11];
+  const quadSupEsq = [21,22,23,24,25,26,27,28];
+  const quadInfDir = [48,47,46,45,44,43,42,41];
+  const quadInfEsq = [31,32,33,34,35,36,37,38];
+
+  // Desenho simples de dente (coroa + raiz); inferior é espelhado verticalmente
+  function toothSVG(inferior){
+    if(inferior){
+      return `<svg viewBox="0 0 24 30">
+        <path class="root" d="M7 2 C5 9 6 15 9 18 L9 14 L12 18 L15 14 L15 18 C18 15 19 9 17 2 Z"/>
+        <path class="crown" d="M5 16 C4 24 7 29 12 29 C17 29 20 24 19 16 C16 19 8 19 5 16 Z"/>
+      </svg>`;
+    }
+    return `<svg viewBox="0 0 24 30">
+      <path class="crown" d="M5 14 C4 6 7 1 12 1 C17 1 20 6 19 14 C16 11 8 11 5 14 Z"/>
+      <path class="root" d="M7 28 C5 21 6 15 9 12 L9 16 L12 12 L15 16 L15 12 C18 15 19 21 17 28 Z"/>
+    </svg>`;
+  }
+
+  function makeQuad(numeros, inferior, classe){
+    const q=document.createElement('div');
+    q.className='quad '+classe;
+    numeros.forEach(n=>{
+      const t=document.createElement('div');
+      t.className='tooth';
+      t.dataset.num=n;
+      t.innerHTML = inferior
+        ? `${toothSVG(true)}<span class="tnum">${n}</span>`
+        : `<span class="tnum">${n}</span>${toothSVG(false)}`;
+      t.onclick=()=>toggleTooth(n,t);
+      q.appendChild(t);
+    });
+    return q;
+  }
+
+  function buildArch(){
+    const arch=document.getElementById('arch');
+    const topRow=document.createElement('div');topRow.className='arch-row';
+    topRow.appendChild(makeQuad(quadSupDir,false,'right'));
+    const g1=document.createElement('div');g1.className='quad-gap';topRow.appendChild(g1);
+    topRow.appendChild(makeQuad(quadSupEsq,false,'left'));
+
+    const div=document.createElement('div');div.className='arch-divider';
+
+    const botRow=document.createElement('div');botRow.className='arch-row';
+    botRow.appendChild(makeQuad(quadInfDir,true,'right'));
+    const g2=document.createElement('div');g2.className='quad-gap';botRow.appendChild(g2);
+    botRow.appendChild(makeQuad(quadInfEsq,true,'left'));
+
+    arch.appendChild(topRow);
+    arch.appendChild(div);
+    arch.appendChild(botRow);
+  }
+
+  function toggleTooth(n,el){
+    const idx=dentesSelecionados.indexOf(n);
+    if(idx>=0){dentesSelecionados.splice(idx,1);el.classList.remove('sel');}
+    else{dentesSelecionados.push(n);el.classList.add('sel');}
+    atualizarSelecionados();
+  }
+
+  function atualizarSelecionados(){
+    const box=document.getElementById('selectedTeeth');
+    if(dentesSelecionados.length===0){
+      box.innerHTML='<b>Nenhum dente selecionado</b>';
+    }else{
+      const lista=[...dentesSelecionados].sort((a,b)=>a-b).join(', ');
+      box.innerHTML=`Selecionados: <b style="color:var(--navy)">${lista}</b>`+
+        `<button class="clear-teeth" onclick="limparDentes()">Limpar seleção</button>`;
+    }
+  }
+
+  function limparDentes(){
+    dentesSelecionados=[];
+    document.querySelectorAll('.tooth.sel').forEach(t=>t.classList.remove('sel'));
+    atualizarSelecionados();
+  }
+
+  buildArch();
 
   // Popular o select
   const sel = document.getElementById('selProc');
@@ -280,13 +396,19 @@
 
   function addItem(){
     const proc = document.getElementById('selProc').value;
-    const dente = document.getElementById('selDente').value.trim();
+    const texto = document.getElementById('selDente').value.trim();
     const valor = parseFloat(document.getElementById('selValor').value)||0;
     if(!proc){alert('Selecione um procedimento.');return;}
-    itens.push({proc,dente:dente||"—",valor});
+    // Combina dentes do odontograma + texto livre digitado
+    const partes=[];
+    if(dentesSelecionados.length) partes.push([...dentesSelecionados].sort((a,b)=>a-b).join(', '));
+    if(texto) partes.push(texto);
+    const dente = partes.length ? partes.join(' · ') : '—';
+    itens.push({proc,dente,valor});
     document.getElementById('selProc').value="";
     document.getElementById('selDente').value="";
     document.getElementById('selValor').value="";
+    limparDentes();
     document.getElementById('selProc').focus();
     render();
   }
@@ -393,6 +515,7 @@
   function limpar(){
     if(!confirm('Limpar todos os dados deste orçamento?'))return;
     itens=[];
+    limparDentes();
     document.getElementById('pNome').value="";
     document.getElementById('pTel').value="";
     document.getElementById('desconto').value="0";
