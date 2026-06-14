@@ -84,6 +84,11 @@
   .tooth:hover .crown,.tooth:hover .root{stroke:var(--gold);}
   .tooth.sel .crown,.tooth.sel .root{fill:var(--gold);stroke:var(--navy);}
   .tooth.sel .tnum{color:var(--navy);font-weight:700;}
+  /* dente com procedimento já adicionado ao orçamento */
+  .tooth.tratado .crown,.tooth.tratado .root{fill:var(--navy);stroke:var(--navy);}
+  .tooth.tratado .tnum{color:var(--navy);font-weight:700;}
+  /* dente tratado E em nova seleção */
+  .tooth.tratado.sel .crown,.tooth.tratado.sel .root{fill:var(--gold);stroke:var(--navy);}
   .arch-divider{width:100%;max-width:560px;border-top:1px dashed var(--line);}
   .quad-gap{width:18px;}
   .shortcuts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;}
@@ -189,7 +194,7 @@
     <!-- Odontograma -->
     <div class="odonto">
       <h3>Odontograma</h3>
-      <div class="hint">Clique nos dentes para selecioná-los. Eles entram no procedimento ao adicionar.</div>
+      <div class="hint">Clique nos dentes para selecioná-los. Eles entram no procedimento ao adicionar. Dentes já orçados ficam em azul.</div>
       <div class="arch" id="arch"></div>
       <div class="shortcuts" id="shortcuts">
         <button data-grp="sup" onclick="toggleGrupo('sup',this)">Arcada superior</button>
@@ -460,7 +465,7 @@
     if(dentesSelecionados.length) partes.push([...dentesSelecionados].sort((a,b)=>a-b).join(', '));
     if(texto) partes.push(texto);
     const dente = partes.length ? partes.join(' · ') : '—';
-    itens.push({proc,dente,valor});
+    itens.push({proc,dente,valor,nums:[...dentesSelecionados]});
     document.getElementById('selProc').value="";
     document.getElementById('selDente').value="";
     document.getElementById('selValor').value="";
@@ -489,6 +494,16 @@
     const desc=parseFloat(document.getElementById('desconto').value)||0;
     document.getElementById('subtotal').textContent=brl(sub);
     document.getElementById('total').textContent=brl(Math.max(0,sub-desc));
+    marcarTratados();
+  }
+
+  // Pinta de azul (navy) os dentes que já têm procedimento no orçamento
+  function marcarTratados(){
+    const tratados=new Set();
+    itens.forEach(it=>{ (it.nums||[]).forEach(n=>tratados.add(n)); });
+    document.querySelectorAll('.tooth').forEach(t=>{
+      t.classList.toggle('tratado',tratados.has(parseInt(t.dataset.num)));
+    });
   }
 
   function imprimir(){
