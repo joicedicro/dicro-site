@@ -523,46 +523,67 @@
   }
 
   // Gera SVG estático do odontograma com dentes tratados pintados (para o PDF)
-  function odontogramaSVG(){
+  // branco=true → sem preenchimento (usado no modelo impresso)
+  function odontogramaSVG(branco){
     const tratados=new Set();
-    itens.forEach(it=>(it.nums||[]).forEach(n=>tratados.add(n)));
-    const W=44, H=58; // espaço por dente
-    function dente(n,inferior,x){
-      const sel=tratados.has(n);
-      const fill=sel?'#0e2240':'#ffffff';
-      const stroke=sel?'#0e2240':'#9fb0c4';
-      const numColor=sel?'#0e2240':'#6c7a8c';
-      const numWeight=sel?'700':'400';
-      let shape;
-      if(inferior){
-        shape=`<path d="M${x+8} 22 C${x+7} 11 ${x+12} 3 ${x+20} 3 C${x+28} 3 ${x+33} 11 ${x+32} 22 C${x+27} 18 ${x+13} 18 ${x+8} 22 Z" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>
-          <path d="M${x+12} 46 C${x+8} 35 ${x+10} 25 ${x+15} 20 L${x+15} 26 L${x+20} 20 L${x+25} 26 L${x+25} 20 C${x+30} 25 ${x+32} 35 ${x+28} 46 Z" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>`;
-        return shape+`<text x="${x+20}" y="${H-1}" font-size="13" fill="${numColor}" font-weight="${numWeight}" text-anchor="middle" font-family="Segoe UI,Arial">${n}</text>`;
-      }else{
-        shape=`<path d="M${x+12} 3 C${x+8} 14 ${x+10} 24 ${x+15} 30 L${x+15} 24 L${x+20} 30 L${x+25} 24 L${x+25} 30 C${x+30} 24 ${x+32} 14 ${x+28} 3 Z" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>
-          <path d="M${x+8} 27 C${x+7} 38 ${x+12} 47 ${x+20} 47 C${x+28} 47 ${x+33} 38 ${x+32} 27 C${x+27} 31 ${x+13} 31 ${x+8} 27 Z" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>`;
-        return `<text x="${x+20}" y="13" font-size="13" fill="${numColor}" font-weight="${numWeight}" text-anchor="middle" font-family="Segoe UI,Arial">${n}</text>`+shape;
-      }
+    if(!branco) itens.forEach(it=>(it.nums||[]).forEach(n=>tratados.add(n)));
+    const W=34, DH=34, GAP=10, NUMH=11; // largura/dente, altura dente, gap central, altura número
+    // Cada célula: número(NUMH) + dente(DH). Total por fileira: NUMH+DH
+    // Superior: número em cima, dente embaixo
+    // Inferior: dente em cima, número embaixo
+    const totalW = 8*W*2 + GAP;
+    const ROW = NUMH + DH;
+    const totalH = ROW*2 + 8; // 8px linha divisória
+
+    function pathSup(x,y){
+      // raiz em cima, coroa embaixo
+      const rx=x+W/2, ry=y+NUMH;
+      return `<path d="M${rx-6} ${ry} C${rx-8} ${ry+8} ${rx-7} ${ry+14} ${rx-4} ${ry+16} L${rx-4} ${ry+13} L${rx} ${ry+17} L${rx+4} ${ry+13} L${rx+4} ${ry+16} C${rx+7} ${ry+14} ${rx+8} ${ry+8} ${rx+6} ${ry} Z"
+        fill="F" stroke="S" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M${rx-9} ${ry+15} C${rx-10} ${ry+24} ${rx-6} ${ry+30} ${rx} ${ry+30} C${rx+6} ${ry+30} ${rx+10} ${ry+24} ${rx+9} ${ry+15} C${rx+6} ${ry+18} ${rx-6} ${ry+18} ${rx-9} ${ry+15} Z"
+        fill="F" stroke="S" stroke-width="1.4" stroke-linejoin="round"/>`;
     }
-    function fileira(arrDir, arrEsq, inferior, y){
-      let s=`<g transform="translate(0,${y})">`;
-      // direita (espelhada: 18..11 da esquerda para o centro)
-      arrDir.forEach((n,i)=>{ s+=dente(n,inferior,i*W); });
-      // gap central + esquerda
-      const offset=arrDir.length*W+24;
-      arrEsq.forEach((n,i)=>{ s+=dente(n,inferior,offset+i*W); });
-      s+=`</g>`;
+    function pathInf(x,y){
+      // coroa em cima, raiz embaixo
+      const rx=x+W/2, ry=y;
+      return `<path d="M${rx-9} ${ry+12} C${rx-10} ${ry+3} ${rx-6} ${ry} ${rx} ${ry} C${rx+6} ${ry} ${rx+10} ${ry+3} ${rx+9} ${ry+12} C${rx+6} ${ry+9} ${rx-6} ${ry+9} ${rx-9} ${ry+12} Z"
+        fill="F" stroke="S" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M${rx-6} ${ry+11} C${rx-8} ${ry+19} ${rx-7} ${ry+25} ${rx-4} ${ry+28} L${rx-4} ${ry+24} L${rx} ${ry+28} L${rx+4} ${ry+24} L${rx+4} ${ry+28} C${rx+7} ${ry+25} ${rx+8} ${ry+19} ${rx+6} ${ry+11} Z"
+        fill="F" stroke="S" stroke-width="1.4" stroke-linejoin="round"/>`;
+    }
+
+    function dente(n, superior, x, y){
+      const sel = tratados.has(n);
+      const fill = (!branco && sel) ? '#0e2240' : '#ffffff';
+      const stroke = (!branco && sel) ? '#0e2240' : '#9fb0c4';
+      const numColor = (!branco && sel) ? '#0e2240' : '#6c7a8c';
+      const numW = (!branco && sel) ? 'bold' : 'normal';
+
+      let paths = (superior ? pathSup(x,y) : pathInf(x,y))
+        .replace(/fill="F"/g, `fill="${fill}"`)
+        .replace(/stroke="S"/g, `stroke="${stroke}"`);
+
+      // número: superiores em cima (y+NUMH-3), inferiores embaixo (y+ROW-1)
+      const ny = superior ? (y + NUMH - 3) : (y + ROW - 1);
+      const num = `<text x="${x+W/2}" y="${ny}" font-size="10" fill="${numColor}"
+        font-weight="${numW}" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">${n}</text>`;
+
+      return superior ? (num + paths) : (paths + num);
+    }
+
+    function fileira(arrDir, arrEsq, superior, y){
+      let s='';
+      arrDir.forEach((n,i) => { s += dente(n, superior, i*W, y); });
+      const offset = arrDir.length*W + GAP;
+      arrEsq.forEach((n,i) => { s += dente(n, superior, offset+i*W, y); });
       return s;
     }
-    const totalW=quadSupDir.length*W*2+24;
-    const supDirOrd=[...quadSupDir]; // 18->11
-    const supEsqOrd=[...quadSupEsq]; // 21->28
-    const infDirOrd=[...quadInfDir]; // 48->41
-    const infEsqOrd=[...quadInfEsq]; // 31->38
-    return `<svg viewBox="0 0 ${totalW} ${H*2+18}" width="${totalW}" xmlns="http://www.w3.org/2000/svg">
-      ${fileira(supDirOrd,supEsqOrd,false,0)}
-      <line x1="0" y1="${H+8}" x2="${totalW}" y2="${H+8}" stroke="#dde4ec" stroke-dasharray="4 4"/>
-      ${fileira(infDirOrd,infEsqOrd,true,H+18)}
+
+    const ySup=0, yInf=ROW+8;
+    return `<svg viewBox="0 0 ${totalW} ${totalH}" width="100%" style="max-width:${totalW}px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">
+      ${fileira([...quadSupDir],[...quadSupEsq], true,  ySup)}
+      <line x1="0" y1="${ROW+4}" x2="${totalW}" y2="${ROW+4}" stroke="#dde4ec" stroke-dasharray="3 3"/>
+      ${fileira([...quadInfDir],[...quadInfEsq], false, yInf)}
     </svg>`;
   }
 
@@ -586,9 +607,15 @@
     ).join("");
     if(!linhas)linhas='<tr><td colspan="4" style="text-align:center;color:#888;padding:14px">Nenhum procedimento.</td></tr>';
 
+    // Captura o odontograma real da página como imagem
+    const archEl = document.getElementById('arch');
+    const archCanvas = await html2canvas(archEl, {scale:2, backgroundColor:'#ffffff', useCORS:true});
+    const archImg = archCanvas.toDataURL('image/png');
+    const archW = archCanvas.width, archH = archCanvas.height;
+
     // Container offscreen com largura A4 (~794px @ 96dpi)
     const cont=document.createElement('div');
-    cont.style.cssText='position:fixed;left:-9999px;top:0;width:794px;background:#fff;font-family:\"Segoe UI\",Arial,sans-serif;color:#1d2733;';
+    cont.style.cssText='position:fixed;left:-9999px;top:0;width:900px;background:#fff;font-family:\"Segoe UI\",Arial,sans-serif;color:#1d2733;';
     cont.innerHTML=`
       <div style="background:#0e2240;color:#fff;padding:22px 28px;border-bottom:4px solid #c4a052;">
         <h1 style="margin:0;font-size:22px;letter-spacing:1.5px;">DICRÓ ODONTOLOGIA</h1>
@@ -599,7 +626,7 @@
       <div style="padding:24px 28px;">
         <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#0e2240;font-weight:700;border-bottom:2px solid #c4a052;padding-bottom:7px;margin-bottom:16px;">Ficha de Orçamento</div>
         <div style="font-size:14px;line-height:1.9;margin-bottom:18px;"><b style="color:#0e2240">Paciente:</b> ${nome} &nbsp;·&nbsp; <b style="color:#0e2240">Data:</b> ${data} &nbsp;·&nbsp; <b style="color:#0e2240">Telefone:</b> ${tel}</div>
-        <div style="text-align:center;margin:6px 0 18px;">${odontogramaSVG()}</div>
+        <div style="text-align:center;margin:6px 0 18px;"><img src="${archImg}" style="max-width:100%;height:auto;display:block;margin:0 auto;" /></div>
         <table style="width:100%;border-collapse:collapse;margin-bottom:14px;">
           <thead><tr>
             <th style="background:#0e2240;color:#fff;font-size:11px;text-transform:uppercase;padding:9px;text-align:left;width:34px">#</th>
@@ -625,17 +652,18 @@
       const {jsPDF}=window.jspdf;
       const pdf=new jsPDF('p','mm','a4');
       const pw=210, ph=297;
-      const imgH=canvas.height*pw/canvas.width;
-      let y=0, restante=imgH;
-      // paginação simples se passar de 1 página
+      // escalar para largura A4, respeitando proporção real
+      const scale=pw/canvas.width;
+      const imgH=canvas.height*scale;
       if(imgH<=ph){
         pdf.addImage(img,'JPEG',0,0,pw,imgH);
       }else{
-        let pos=0;
-        while(restante>0){
+        // paginar se maior que A4
+        let pos=0, rest=imgH;
+        while(rest>0){
           pdf.addImage(img,'JPEG',0,pos,pw,imgH);
-          restante-=ph;
-          if(restante>0){pdf.addPage();pos-=ph;}
+          rest-=ph;
+          if(rest>0){pdf.addPage();pos-=ph;}
         }
       }
       const safe=nome.replace(/[^a-zA-ZÀ-ú0-9 ]/g,'').trim().replace(/\s+/g,'-')||'paciente';
