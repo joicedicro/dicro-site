@@ -86,6 +86,12 @@
   .tooth.sel .tnum{color:var(--navy);font-weight:700;}
   .arch-divider{width:100%;max-width:560px;border-top:1px dashed var(--line);}
   .quad-gap{width:18px;}
+  .shortcuts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;}
+  .shortcuts button{background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:6px 16px;font-size:12px;color:var(--navy);cursor:pointer;font-family:inherit;
+    transition:all .12s;letter-spacing:.3px;}
+  .shortcuts button:hover{border-color:var(--gold);background:var(--gold-soft);}
+  .shortcuts button.active{background:var(--navy);color:#fff;border-color:var(--navy);}
   .selected-teeth{margin-top:14px;font-size:12.5px;color:var(--navy);min-height:20px;}
   .selected-teeth b{color:var(--muted);font-weight:600;}
   .clear-teeth{background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);
@@ -144,7 +150,7 @@
   @media print{
     body{background:#fff;padding:0;}
     .sheet{box-shadow:none;border-radius:0;max-width:100%;}
-    .actions,.picker,.odonto,.del,.add-btn{display:none!important;}
+    .actions,.picker,.odonto,.shortcuts,.del,.add-btn{display:none!important;}
     thead th:last-child{display:none;}
     tbody td:last-child{display:none;}
     .field input,textarea{border:none;}
@@ -185,6 +191,13 @@
       <h3>Odontograma</h3>
       <div class="hint">Clique nos dentes para selecioná-los. Eles entram no procedimento ao adicionar.</div>
       <div class="arch" id="arch"></div>
+      <div class="shortcuts" id="shortcuts">
+        <button data-grp="sup" onclick="toggleGrupo('sup',this)">Arcada superior</button>
+        <button data-grp="inf" onclick="toggleGrupo('inf',this)">Arcada inferior</button>
+        <button data-grp="ant" onclick="toggleGrupo('ant',this)">Dentes anteriores</button>
+        <button data-grp="post" onclick="toggleGrupo('post',this)">Dentes posteriores</button>
+        <button data-grp="all" onclick="toggleGrupo('all',this)">Todos os dentes</button>
+      </div>
       <div class="selected-teeth" id="selectedTeeth"><b>Nenhum dente selecionado</b></div>
     </div>
 
@@ -305,17 +318,33 @@
   const quadInfDir = [48,47,46,45,44,43,42,41];
   const quadInfEsq = [31,32,33,34,35,36,37,38];
 
-  // Desenho simples de dente (coroa + raiz); inferior é espelhado verticalmente
+  const TODOS = [...quadSupDir,...quadSupEsq,...quadInfDir,...quadInfEsq];
+  // Grupos de atalho
+  const GRUPOS = {
+    sup: [...quadSupDir,...quadSupEsq],
+    inf: [...quadInfDir,...quadInfEsq],
+    // anteriores: incisivos e caninos (3 a 1 de cada quadrante)
+    ant: [13,12,11,21,22,23,43,42,41,31,32,33],
+    // posteriores: pré-molares e molares (8 a 4 de cada quadrante)
+    post: [18,17,16,15,14,28,27,26,25,24,48,47,46,45,44,38,37,36,35,34],
+    all: TODOS
+  };
+
+  // Desenho simples de dente (coroa + raiz). Padrão Simples Dental:
+  // superior = raiz para cima, coroa para baixo (voltada para a linha de oclusão central)
+  // inferior = coroa para cima, raiz para baixo
   function toothSVG(inferior){
     if(inferior){
+      // coroa em cima, raiz embaixo
       return `<svg viewBox="0 0 24 30">
-        <path class="root" d="M7 2 C5 9 6 15 9 18 L9 14 L12 18 L15 14 L15 18 C18 15 19 9 17 2 Z"/>
-        <path class="crown" d="M5 16 C4 24 7 29 12 29 C17 29 20 24 19 16 C16 19 8 19 5 16 Z"/>
+        <path class="crown" d="M5 14 C4 6 7 1 12 1 C17 1 20 6 19 14 C16 11 8 11 5 14 Z"/>
+        <path class="root" d="M7 28 C5 21 6 15 9 12 L9 16 L12 12 L15 16 L15 12 C18 15 19 21 17 28 Z"/>
       </svg>`;
     }
+    // raiz em cima, coroa embaixo
     return `<svg viewBox="0 0 24 30">
-      <path class="crown" d="M5 14 C4 6 7 1 12 1 C17 1 20 6 19 14 C16 11 8 11 5 14 Z"/>
-      <path class="root" d="M7 28 C5 21 6 15 9 12 L9 16 L12 12 L15 16 L15 12 C18 15 19 21 17 28 Z"/>
+      <path class="root" d="M7 2 C5 9 6 15 9 18 L9 14 L12 18 L15 14 L15 18 C18 15 19 9 17 2 Z"/>
+      <path class="crown" d="M5 16 C4 24 7 29 12 29 C17 29 20 24 19 16 C16 19 8 19 5 16 Z"/>
     </svg>`;
   }
 
@@ -354,10 +383,36 @@
     arch.appendChild(botRow);
   }
 
+  function toggleGrupo(grp,btn){
+    const grupo=GRUPOS[grp];
+    // se todos do grupo já estão selecionados, desmarca o grupo; senão marca todos
+    const todosMarcados=grupo.every(n=>dentesSelecionados.includes(n));
+    if(todosMarcados){
+      dentesSelecionados=dentesSelecionados.filter(n=>!grupo.includes(n));
+    }else{
+      grupo.forEach(n=>{if(!dentesSelecionados.includes(n))dentesSelecionados.push(n);});
+    }
+    sincronizarVisual();
+    atualizarSelecionados();
+  }
+
+  // Reflete o array de seleção nos dentes e nos botões de atalho
+  function sincronizarVisual(){
+    document.querySelectorAll('.tooth').forEach(t=>{
+      t.classList.toggle('sel',dentesSelecionados.includes(parseInt(t.dataset.num)));
+    });
+    document.querySelectorAll('.shortcuts button').forEach(b=>{
+      const g=GRUPOS[b.dataset.grp];
+      const ativo=g.length>0 && g.every(n=>dentesSelecionados.includes(n));
+      b.classList.toggle('active',ativo);
+    });
+  }
+
   function toggleTooth(n,el){
     const idx=dentesSelecionados.indexOf(n);
     if(idx>=0){dentesSelecionados.splice(idx,1);el.classList.remove('sel');}
     else{dentesSelecionados.push(n);el.classList.add('sel');}
+    sincronizarVisual();
     atualizarSelecionados();
   }
 
@@ -375,6 +430,7 @@
   function limparDentes(){
     dentesSelecionados=[];
     document.querySelectorAll('.tooth.sel').forEach(t=>t.classList.remove('sel'));
+    document.querySelectorAll('.shortcuts button.active').forEach(b=>b.classList.remove('active'));
     atualizarSelecionados();
   }
 
