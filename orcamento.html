@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orçamento — Dicró Odontologia</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
   :root{
     --navy:#0e2240;
@@ -141,6 +143,8 @@
   .actions button{border:none;border-radius:8px;padding:11px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;}
   .btn-print{background:var(--gold);color:var(--navy);}
   .btn-print:hover{background:#d4af5e;}
+  .btn-pdf{background:var(--navy);color:#fff;}
+  .btn-pdf:hover{background:var(--navy-soft);}
   .btn-clear{background:#f0f3f7;color:var(--muted);}
   .btn-clear:hover{background:#e4e9ef;}
 
@@ -278,6 +282,7 @@
 
   <div class="actions">
     <button class="btn-clear" onclick="limpar()">Limpar tudo</button>
+    <button class="btn-pdf" onclick="salvarPDF()">📄 Salvar ficha (PDF)</button>
     <button class="btn-print" onclick="imprimir()">🖨 Imprimir orçamento</button>
   </div>
 </div>
@@ -515,6 +520,132 @@
       }
     }catch(e){}
     gerarJanelaImpressao();
+  }
+
+  // Gera SVG estático do odontograma com dentes tratados pintados (para o PDF)
+  function odontogramaSVG(){
+    const tratados=new Set();
+    itens.forEach(it=>(it.nums||[]).forEach(n=>tratados.add(n)));
+    const W=44, H=58; // espaço por dente
+    function dente(n,inferior,x){
+      const sel=tratados.has(n);
+      const fill=sel?'#0e2240':'#ffffff';
+      const stroke=sel?'#0e2240':'#9fb0c4';
+      const numColor=sel?'#0e2240':'#6c7a8c';
+      const numWeight=sel?'700':'400';
+      let shape;
+      if(inferior){
+        shape=`<path d="M${x+8} 22 C${x+7} 11 ${x+12} 3 ${x+20} 3 C${x+28} 3 ${x+33} 11 ${x+32} 22 C${x+27} 18 ${x+13} 18 ${x+8} 22 Z" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>
+          <path d="M${x+12} 46 C${x+8} 35 ${x+10} 25 ${x+15} 20 L${x+15} 26 L${x+20} 20 L${x+25} 26 L${x+25} 20 C${x+30} 25 ${x+32} 35 ${x+28} 46 Z" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>`;
+        return shape+`<text x="${x+20}" y="${H-1}" font-size="13" fill="${numColor}" font-weight="${numWeight}" text-anchor="middle" font-family="Segoe UI,Arial">${n}</text>`;
+      }else{
+        shape=`<path d="M${x+12} 3 C${x+8} 14 ${x+10} 24 ${x+15} 30 L${x+15} 24 L${x+20} 30 L${x+25} 24 L${x+25} 30 C${x+30} 24 ${x+32} 14 ${x+28} 3 Z" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>
+          <path d="M${x+8} 27 C${x+7} 38 ${x+12} 47 ${x+20} 47 C${x+28} 47 ${x+33} 38 ${x+32} 27 C${x+27} 31 ${x+13} 31 ${x+8} 27 Z" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>`;
+        return `<text x="${x+20}" y="13" font-size="13" fill="${numColor}" font-weight="${numWeight}" text-anchor="middle" font-family="Segoe UI,Arial">${n}</text>`+shape;
+      }
+    }
+    function fileira(arrDir, arrEsq, inferior, y){
+      let s=`<g transform="translate(0,${y})">`;
+      // direita (espelhada: 18..11 da esquerda para o centro)
+      arrDir.forEach((n,i)=>{ s+=dente(n,inferior,i*W); });
+      // gap central + esquerda
+      const offset=arrDir.length*W+24;
+      arrEsq.forEach((n,i)=>{ s+=dente(n,inferior,offset+i*W); });
+      s+=`</g>`;
+      return s;
+    }
+    const totalW=quadSupDir.length*W*2+24;
+    const supDirOrd=[...quadSupDir]; // 18->11
+    const supEsqOrd=[...quadSupEsq]; // 21->28
+    const infDirOrd=[...quadInfDir]; // 48->41
+    const infEsqOrd=[...quadInfEsq]; // 31->38
+    return `<svg viewBox="0 0 ${totalW} ${H*2+18}" width="${totalW}" xmlns="http://www.w3.org/2000/svg">
+      ${fileira(supDirOrd,supEsqOrd,false,0)}
+      <line x1="0" y1="${H+8}" x2="${totalW}" y2="${H+8}" stroke="#dde4ec" stroke-dasharray="4 4"/>
+      ${fileira(infDirOrd,infEsqOrd,true,H+18)}
+    </svg>`;
+  }
+
+  async function salvarPDF(){
+    if(typeof window.jspdf==='undefined'||typeof html2canvas==='undefined'){
+      alert('As bibliotecas de PDF não carregaram. Verifique a conexão e tente novamente.');
+      return;
+    }
+    const fmt=d=>{if(!d)return"—";const[a,m,di]=d.split('-');return `${di}/${m}/${a}`;};
+    const nome=document.getElementById('pNome').value.trim()||"—";
+    const data=fmt(document.getElementById('pData').value);
+    const tel=document.getElementById('pTel').value.trim()||"—";
+    const desc=parseFloat(document.getElementById('desconto').value)||0;
+    const sub=itens.reduce((s,i)=>s+i.valor,0);
+    const tot=Math.max(0,sub-desc);
+    const pagto=(document.getElementById('pagto').value.trim()||"—").replace(/\n/g,'<br>');
+    const obs=(document.getElementById('obs').value.trim()||"—").replace(/\n/g,'<br>');
+
+    let linhas=itens.map((it,i)=>
+      `<tr><td>${i+1}</td><td>${it.proc}</td><td>${it.dente}</td><td style="text-align:right">${brl(it.valor)}</td></tr>`
+    ).join("");
+    if(!linhas)linhas='<tr><td colspan="4" style="text-align:center;color:#888;padding:14px">Nenhum procedimento.</td></tr>';
+
+    // Container offscreen com largura A4 (~794px @ 96dpi)
+    const cont=document.createElement('div');
+    cont.style.cssText='position:fixed;left:-9999px;top:0;width:794px;background:#fff;font-family:\"Segoe UI\",Arial,sans-serif;color:#1d2733;';
+    cont.innerHTML=`
+      <div style="background:#0e2240;color:#fff;padding:22px 28px;border-bottom:4px solid #c4a052;">
+        <h1 style="margin:0;font-size:22px;letter-spacing:1.5px;">DICRÓ ODONTOLOGIA</h1>
+        <p style="margin:2px 0 0;font-size:11px;color:#e8d9ad;letter-spacing:1px;text-transform:uppercase;">Especializada</p>
+        <div style="font-size:11px;color:#c3d0e0;margin-top:10px;line-height:1.6;">Dra. Joice Dicró · CRO-RJ 055701<br>
+        Praça João Luiz do Nascimento, 28 — Loja 2, Mesquita/RJ · WhatsApp (21) 97160-0874 · @dicro.odontologia</div>
+      </div>
+      <div style="padding:24px 28px;">
+        <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#0e2240;font-weight:700;border-bottom:2px solid #c4a052;padding-bottom:7px;margin-bottom:16px;">Ficha de Orçamento</div>
+        <div style="font-size:14px;line-height:1.9;margin-bottom:18px;"><b style="color:#0e2240">Paciente:</b> ${nome} &nbsp;·&nbsp; <b style="color:#0e2240">Data:</b> ${data} &nbsp;·&nbsp; <b style="color:#0e2240">Telefone:</b> ${tel}</div>
+        <div style="text-align:center;margin:6px 0 18px;">${odontogramaSVG()}</div>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:14px;">
+          <thead><tr>
+            <th style="background:#0e2240;color:#fff;font-size:11px;text-transform:uppercase;padding:9px;text-align:left;width:34px">#</th>
+            <th style="background:#0e2240;color:#fff;font-size:11px;text-transform:uppercase;padding:9px;text-align:left">Procedimento</th>
+            <th style="background:#0e2240;color:#fff;font-size:11px;text-transform:uppercase;padding:9px;text-align:left;width:130px">Dente/Região</th>
+            <th style="background:#0e2240;color:#fff;font-size:11px;text-transform:uppercase;padding:9px;text-align:right;width:110px">Valor</th>
+          </tr></thead>
+          <tbody style="font-size:13px;">${linhas.replace(/<td>/g,'<td style="padding:9px;border-bottom:1px solid #dde4ec;">').replace(/<td style="text-align:right">/g,'<td style="padding:9px;border-bottom:1px solid #dde4ec;text-align:right;">')}</tbody>
+        </table>
+        <div style="text-align:right;font-size:14px;line-height:1.9;">
+          Subtotal: ${brl(sub)}<br>Desconto: ${brl(desc)}<br>
+          <span style="font-size:18px;font-weight:700;color:#0e2240;">TOTAL: ${brl(tot)}</span>
+        </div>
+        <div style="margin-top:18px;font-size:13px;line-height:1.7;"><b style="color:#0e2240">Forma de pagamento:</b> ${pagto}<br><b style="color:#0e2240">Observações:</b> ${obs}</div>
+        <div style="margin-top:44px;text-align:center;"><div style="border-top:1px solid #1d2733;width:280px;margin:0 auto 5px;"></div><small style="font-size:11px;color:#6c7a8c;">Dra. Joice Dicró · CRO-RJ 055701</small></div>
+        <div style="font-size:10.5px;color:#6c7a8c;margin-top:22px;">Orçamento válido por 30 dias a partir da data de emissão. Os valores podem ser revistos após avaliação clínica.</div>
+      </div>`;
+    document.body.appendChild(cont);
+
+    try{
+      const canvas=await html2canvas(cont,{scale:2,backgroundColor:'#ffffff',useCORS:true});
+      const img=canvas.toDataURL('image/jpeg',0.95);
+      const {jsPDF}=window.jspdf;
+      const pdf=new jsPDF('p','mm','a4');
+      const pw=210, ph=297;
+      const imgH=canvas.height*pw/canvas.width;
+      let y=0, restante=imgH;
+      // paginação simples se passar de 1 página
+      if(imgH<=ph){
+        pdf.addImage(img,'JPEG',0,0,pw,imgH);
+      }else{
+        let pos=0;
+        while(restante>0){
+          pdf.addImage(img,'JPEG',0,pos,pw,imgH);
+          restante-=ph;
+          if(restante>0){pdf.addPage();pos-=ph;}
+        }
+      }
+      const safe=nome.replace(/[^a-zA-ZÀ-ú0-9 ]/g,'').trim().replace(/\s+/g,'-')||'paciente';
+      const dataArq=(document.getElementById('pData').value||'').replace(/-/g,'');
+      pdf.save(`Orcamento-${safe}-${dataArq}.pdf`);
+    }catch(e){
+      alert('Não foi possível gerar o PDF: '+e.message);
+    }finally{
+      document.body.removeChild(cont);
+    }
   }
 
   function gerarJanelaImpressao(){
