@@ -13,18 +13,60 @@
   "@context": "https://schema.org",
   "@type": "Dentist",
   "name": "Dicró Odontologia Especializada",
-  "description": "Consultório odontológico em Mesquita, RJ. Ortodontia, próteses, implantes e clínica geral.",
-  "url": "https://dicro.com.br",
+  "description": "Consultório odontológico em Mesquita, RJ. Ortodontia, próteses, implantes e clínica geral com atendimento humanizado.",
+  "url": "https://www.dicro.com.br",
   "telephone": "+5521971600874",
+  "priceRange": "$$",
+  "image": "https://www.dicro.com.br/recepcao-principal.jpg",
+  "logo": "https://www.dicro.com.br/logo-dicro.png",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Praça João Luiz do Nascimento, 28 Loja 2",
+    "streetAddress": "Praça João Luiz do Nascimento, 28, Loja 2",
     "addressLocality": "Mesquita",
     "addressRegion": "RJ",
+    "postalCode": "26550-000",
     "addressCountry": "BR"
   },
-  "sameAs": ["https://www.instagram.com/dicro.odontologia"]
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Saturday"],"opens": "09:00","closes": "13:00"}
+  ],
+  "medicalSpecialty": ["Orthodontics","Prosthodontics","Oral and Maxillofacial Surgery","General Dentistry"],
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Dicr%C3%B3+Odontologia+Pra%C3%A7a+Jo%C3%A3o+Luiz+28+Mesquita+RJ",
+  "sameAs": ["https://www.instagram.com/dicro.odontologia"],
+  "employee": {"@type": "Person","name": "Dra. Joice Araújo de Oliveira Dicró","jobTitle": "Cirurgiã-Dentista — Responsável Técnica","identifier": "CRO-RJ 055701"}
 }
+</script>
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Dicró Odontologia Especializada">
+<meta property="og:url" content="https://www.dicro.com.br/">
+<meta property="og:title" content="Dicró Odontologia Especializada — Mesquita, RJ">
+<meta property="og:description" content="Ortodontia, próteses, implantes e clínica geral no centro de Mesquita/RJ. Atendimento humanizado com a Dra. Joice Dicró. Agende pelo WhatsApp.">
+<meta property="og:image" content="https://www.dicro.com.br/recepcao-principal.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Recepção da Dicró Odontologia Especializada em Mesquita, RJ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dicró Odontologia Especializada — Mesquita, RJ">
+<meta name="twitter:description" content="Ortodontia, próteses, implantes e clínica geral no centro de Mesquita/RJ. Agende pelo WhatsApp.">
+<meta name="twitter:image" content="https://www.dicro.com.br/recepcao-principal.jpg">
+<link rel="canonical" href="https://www.dicro.com.br/">
+<!-- GOOGLE ANALYTICS 4 — substitua G-XXXXXXXXXX pelo seu Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX',{'anonymize_ip':true});
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href*="wa.me"],a[href*="whatsapp"]').forEach(function(el){
+    el.addEventListener('click',function(){gtag('event','whatsapp_click',{event_category:'Contato',event_label:'WhatsApp'});});
+  });
+  var f=document.getElementById('form-agendamento');
+  if(f){f.addEventListener('submit',function(){gtag('event','form_submit',{event_category:'Lead',event_label:'Formulário'});});}
+});
 </script>
 <style>
 :root{
@@ -225,7 +267,52 @@ footer strong{color:var(--gold-soft)}
   </div>
 </section>
 
-<section class="section promos" id="condicoes">
+<section class="section promos" 
+<!-- SEÇÃO: FORMULÁRIO DE AGENDAMENTO -->
+<section id="agendar" class="section" style="background:#f5f0e8">
+  <div class="wrap" style="max-width:600px">
+    <div class="section-head">
+      <span class="eyebrow">AGENDE SUA CONSULTA</span>
+      <h2>Fale com a gente</h2>
+      <p>Preencha o formulário e entraremos em contato pelo WhatsApp para confirmar seu horário.</p>
+    </div>
+    <form id="form-agendamento" action="https://formsubmit.co/SEU_EMAIL@gmail.com" method="POST" style="display:flex;flex-direction:column;gap:16px;margin-top:32px">
+      <input type="hidden" name="_subject" value="Novo agendamento — Dicró Odontologia">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.dicro.com.br/?agendado=1">
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div style="flex:1;min-width:200px">
+          <label for="nome" style="display:block;font-size:13px;font-weight:600;color:#1a3a2a;margin-bottom:6px">Seu nome *</label>
+          <input type="text" id="nome" name="nome" required placeholder="Ex: Maria Silva" style="width:100%;padding:12px 14px;border:1.5px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box">
+        </div>
+        <div style="flex:1;min-width:200px">
+          <label for="whatsapp" style="display:block;font-size:13px;font-weight:600;color:#1a3a2a;margin-bottom:6px">WhatsApp *</label>
+          <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(21) 99999-9999" style="width:100%;padding:12px 14px;border:1.5px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box">
+        </div>
+      </div>
+      <div>
+        <label for="tratamento" style="display:block;font-size:13px;font-weight:600;color:#1a3a2a;margin-bottom:6px">Tratamento de interesse</label>
+        <select id="tratamento" name="tratamento" style="width:100%;padding:12px 14px;border:1.5px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box;background:#fff">
+          <option value="">Selecione (opcional)</option>
+          <option value="Ortodontia">Ortodontia / Aparelho</option>
+          <option value="Protese">Prótese Dentária</option>
+          <option value="Implante">Implante</option>
+          <option value="Clinica Geral">Clínica Geral / Limpeza</option>
+          <option value="Urgencia">Urgência / Dor de dente</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+      <div>
+        <label for="mensagem" style="display:block;font-size:13px;font-weight:600;color:#1a3a2a;margin-bottom:6px">Mensagem (opcional)</label>
+        <textarea id="mensagem" name="mensagem" rows="3" placeholder="Conte um pouco sobre o que você precisa..." style="width:100%;padding:12px 14px;border:1.5px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box;resize:vertical"></textarea>
+      </div>
+      <button type="submit" class="btn" style="width:100%;border:none;cursor:pointer;font-size:16px;font-weight:700">Quero agendar minha consulta →</button>
+      <p style="font-size:12px;color:#888;text-align:center;margin:0">Seus dados são usados apenas para retorno de contato. Não compartilhamos com terceiros.</p>
+    </form>
+  </div>
+</section>
+id="condicoes">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Condições especiais</span>
@@ -252,7 +339,37 @@ footer strong{color:var(--gold-soft)}
   </div>
 </section>
 
-<section class="section" id="localizacao">
+<section class="section" 
+<!-- SEÇÃO: DEPOIMENTOS -->
+<section id="depoimentos" class="section" style="background:#fff">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">DEPOIMENTOS</span>
+      <h2>O que nossos pacientes dizem</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:0">
+      <div style="background:#f5f0e8;border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:14px">
+        <div style="color:#8a6f2e;font-size:20px">★★★★★</div>
+        <p style="color:#333;font-size:15px;line-height:1.6;margin:0;font-style:italic">"Fiz meu aparelho com a Dra. Joice e o acompanhamento é incrível. Ela explica tudo com clareza e se preocupa de verdade com o resultado. Recomendo demais!"</p>
+        <div><strong style="color:#1a3a2a;font-size:14px">Ana Paula M.</strong><span style="color:#888;font-size:13px;display:block">Paciente de Ortodontia · Mesquita/RJ</span></div>
+      </div>
+      <div style="background:#f5f0e8;border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:14px">
+        <div style="color:#8a6f2e;font-size:20px">★★★★★</div>
+        <p style="color:#333;font-size:15px;line-height:1.6;margin:0;font-style:italic">"Fiz minha prótese aqui e ficou perfeita. Atendimento super atencioso, me senti à vontade desde a primeira consulta. Ambiente limpo e organizado."</p>
+        <div><strong style="color:#1a3a2a;font-size:14px">Carlos R.</strong><span style="color:#888;font-size:13px;display:block">Paciente de Prótese · Mesquita/RJ</span></div>
+      </div>
+      <div style="background:#f5f0e8;border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:14px">
+        <div style="color:#8a6f2e;font-size:20px">★★★★★</div>
+        <p style="color:#333;font-size:15px;line-height:1.6;margin:0;font-style:italic">"Tive uma dor horrível de dente numa sexta à tarde e me atenderam com prioridade. Resolveram no mesmo dia. Gratidão enorme à equipe!"</p>
+        <div><strong style="color:#1a3a2a;font-size:14px">Fernanda S.</strong><span style="color:#888;font-size:13px;display:block">Urgência · Mesquita/RJ</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta." target="_blank" class="btn">Quero ser o próximo paciente →</a>
+    </div>
+  </div>
+</section>
+id="localizacao">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Onde estamos</span>
@@ -276,6 +393,36 @@ footer strong{color:var(--gold-soft)}
   </div>
 </section>
 
+
+<!-- SEÇÃO: GALERIA DO CONSULTÓRIO -->
+<section id="clinica" class="section" style="background:var(--navy)">
+  <div class="wrap">
+    <div class="section-head" style="color:#fff">
+      <span class="eyebrow">ESTRUTURA</span>
+      <h2 style="color:#fff">Conheça a nossa clínica</h2>
+      <p style="color:#b5c9bb;max-width:520px;margin:0 auto">Um ambiente pensado para você se sentir à vontade desde o momento em que chega.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:32px">
+      <div style="grid-column:span 7;grid-row:span 2;border-radius:16px;overflow:hidden;aspect-ratio:4/3">
+        <img src="recepcao-atendente.jpg" alt="Recepção da Dicró Odontologia Especializada em Mesquita/RJ com atendente sorrindo" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+      </div>
+      <div style="grid-column:span 5;border-radius:16px;overflow:hidden;aspect-ratio:16/9">
+        <img src="recepcao-principal.jpg" alt="Sala de espera da Dicró Odontologia em Mesquita, iluminada com luz natural" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+      </div>
+      <div style="grid-column:span 5;border-radius:16px;overflow:hidden;aspect-ratio:16/9">
+        <img src="consultorio.jpg" alt="Consultório odontológico da Dicró com cadeira e equipamentos modernos" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+      <div style="border-radius:16px;overflow:hidden;aspect-ratio:16/9">
+        <img src="fachada.jpg" alt="Fachada da Dicró Odontologia Especializada, Loja 2, Praça da Telemar, Mesquita/RJ" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+      </div>
+      <div style="border-radius:16px;overflow:hidden;aspect-ratio:16/9">
+        <img src="fachada-servicos.jpg" alt="Fachada da Dicró Odontologia com lista de especialidades em Mesquita/RJ" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <div>
