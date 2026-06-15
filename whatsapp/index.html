@@ -43,7 +43,21 @@ footer { background: #0a1628; color: #64748b; text-align: center; padding: 24px;
 footer a { color: var(--gold); text-decoration: none; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7SREJMBQ6"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-B7SREJMBQ6');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-B7SREJMBQ6');
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], a[href*="api.whatsapp"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      gtag('event', 'whatsapp_click', {
+        event_category: 'Contato',
+        event_label: el.textContent.trim() || 'WhatsApp'
+      });
+    });
+  });
+
+});
+</script>
 </head>
 <body>
 <header>
