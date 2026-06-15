@@ -64,9 +64,7 @@ document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('a[href*="wa.me"],a[href*="whatsapp"]').forEach(function(el){
     el.addEventListener('click',function(){gtag('event','whatsapp_click',{event_category:'Contato',event_label:'WhatsApp'});});
   });
-  var f=document.getElementById('form-agendamento');
-  if(f){f.addEventListener('submit',function(){gtag('event','form_submit',{event_category:'Lead',event_label:'Formulário'});});}
-});
+ 
 </script>
 <style>
 :root{
