@@ -96,6 +96,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
   });
 
+
+  document.querySelectorAll('a[href*="instagram.com"]').forEach(function(el) {
+
+    el.addEventListener('click', function() {
+
+      gtag('event', 'instagram_click', {
+        event_category: 'Redes Sociais',
+        event_label: 'Instagram'
+      });
+
+    });
+
+  });
 });
 </script>
 <style>
