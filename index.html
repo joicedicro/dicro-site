@@ -24,29 +24,57 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{h
+{
   "@context": "https://schema.org",
   "@type": "Dentist",
   "name": "Dicró Odontologia Especializada",
-  "description": "Consultório odontológico em Mesquita, RJ. Ortodontia, próteses, implantes e clínica geral com atendimento humanizado.",
+  "description": "Consultório odontológico em Mesquita, RJ. Especialidades: Ortodontia, Harmonização Orofacial, Próteses, Implantes e Clínica Geral. Atendimento humanizado com a Dra. Joice Dicró (CRO-RJ 055701).",
   "url": "https://www.dicro.com.br",
   "telephone": "+5521971600874",
   "priceRange": "$$",
-  "image": "https://www.dicro.com.br/recepcao-fundo.jpg",
+  "image": ["https://www.dicro.com.br/recepcao-fundo.jpg","https://www.dicro.com.br/recepcao2.jpg","https://www.dicro.com.br/fachada2.jpg"],
   "logo": "https://www.dicro.com.br/logo-dicro.png",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Praça João Luiz do Nascimento, 28, Loja 2",
     "addressLocality": "Mesquita",
     "addressRegion": "RJ",
-    "postalCode": "26550-000",
+    "postalCode": "26551-240",
     "addressCountry": "BR"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -22.7826359,
+    "longitude": -43.4275274
+  },
   "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "07:00","closes": "21:00"},
     {"@type": "OpeningHoursSpecification","dayOfWeek": ["Saturday"],"opens": "09:00","closes": "13:00"}
   ],
   "medicalSpecialty": ["Orthodontics","Prosthodontics","Oral and Maxillofacial Surgery","General Dentistry"],
+  "employee": {
+    "@type": "Physician",
+    "name": "Dra. Joice Dicró",
+    "medicalSpecialty": "Orthodontics",
+    "identifier": "CRO-RJ 055701"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "28",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {"@type": "Review","author": {"@type": "Person","name": "Daniele Souza Dani"},"reviewRating": {"@type": "Rating","ratingValue": "5"},"reviewBody": "Parabéns pelo consultório muito bonito e organizado. A Dra Joice Dicró foi muito atenciosa e deixou meu sorriso perfeito."},
+    {"@type": "Review","author": {"@type": "Person","name": "Joao Vitor"},"reviewRating": {"@type": "Rating","ratingValue": "5"},"reviewBody": "Atendimento excelente! A Dra. Joice é muito simpática e profissional. Clínica organizada e acolhedora."},
+    {"@type": "Review","author": {"@type": "Person","name": "Marcia Menezes"},"reviewRating": {"@type": "Rating","ratingValue": "5"},"reviewBody": "Gostei muito do atendimento e eficiência. Recepcionistas muito educados e atenciosos. Recomendo."}
+  ],
+  "sameAs": [
+    "https://www.instagram.com/dicro.odontologia/",
+    "https://www.facebook.com/dicro.odontologia",
+    "https://g.page/r/CV93LsQKg2UzEBM/review"
+  ],
   "hasMap": "https://www.google.com/maps/search/?api=1&query=Dicr%C3%B3+Odontologia+Pra%C3%A7a+Jo%C3%A3o+Luiz+28+Mesquita+RJ",
   "sameAs": ["https://www.instagram.com/dicro.odontologia"],
   "employee": {"@type": "Person","name": "Dra. Joice Dicró","jobTitle": "Cirurgiã-Dentista — Responsável Técnica","identifier": "CRO-RJ 055701"}
