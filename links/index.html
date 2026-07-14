@@ -203,6 +203,79 @@ text-align: center;
 .link-btn { transition: none; }
 }
 </style>
+
+<!-- GOOGLE ANALYTICS 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7SREJMBQ6"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'G-B7SREJMBQ6', {
+  anonymize_ip: true
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(el) {
+
+    el.addEventListener('click', function() {
+
+      gtag('event', 'whatsapp_click', {
+        event_category: 'Contato',
+        event_label: 'WhatsApp'
+      });
+
+    });
+
+  });
+
+  document.querySelectorAll('a[href*="maps.google"], a[href*="google.com/maps"], a[href*="maps.app.goo.gl"]').forEach(function(el) {
+
+    el.addEventListener('click', function() {
+
+      gtag('event', 'localizacao_click', {
+        event_category: 'Localizacao',
+        event_label: el.textContent.trim() || 'Mapa'
+      });
+
+    });
+
+  });
+
+  document.querySelectorAll('a[href*="simplesdental"]').forEach(function(el) {
+
+    el.addEventListener('click', function() {
+
+      gtag('event', 'agendamento_online_click', {
+        event_category: 'Agendamento',
+        event_label: 'Simples Dental'
+      });
+
+    });
+
+  });
+
+  document.querySelectorAll('a[href*="dicro.com.br"]:not([href*="wa.me"])').forEach(function(el) {
+
+    el.addEventListener('click', function() {
+
+      gtag('event', 'site_click', {
+        event_category: 'Site',
+        event_label: 'Nosso site'
+      });
+
+    });
+
+  });
+
+});
+</script>
+
 </head>
 <body>
 <div class="card">
