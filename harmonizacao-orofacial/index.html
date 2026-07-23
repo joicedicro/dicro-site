@@ -1,18 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Harmonização Orofacial em Mesquita, RJ — Dicró Odontologia Especializada</title>
+<meta name="description" content="Harmonização Orofacial em Mesquita/RJ com a Dra. Aline Gatti — CRO-RJ 52552. Preenchimento labial, toxina botulínica, bioestimuladores e mais. Agende uma consulta pelo WhatsApp na Dicró Odontologia."/>
+<link rel="canonical" href="https://www.dicro.com.br/harmonizacao-orofacial/"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root { --navy: #1B2A4A; --gold: #C9A24B; --gold-light: #E3C87F; --cream: #faf8f3; --green-wa: #25D366; --green-wa-dark: #128C7E; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); }
+header { background: var(--navy); padding: 16px 24px; text-align: center; }
+header .brand { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.3rem; font-weight: 700; }
+header .brand-sub { color: var(--gold-light); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 300; }
+.hero { background: linear-gradient(135deg, var(--navy) 0%, #2A3F6B 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 12px; line-height: 1.25; }
+.hero p { color: #cbd5e1; font-size: 1rem; max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+.btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--green-wa); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; padding: 16px 36px; border-radius: 12px; text-decoration: none; transition: background 0.2s; max-width: 360px; width: 100%; }
+.btn-wa:hover { background: var(--green-wa-dark); }
+.btn-wa svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
+.doctor { padding: 56px 24px; max-width: 900px; margin: 0 auto; }
+.doctor-grid { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; }
+.doctor-grid .portrait img { width: 100%; border-radius: 16px; box-shadow: 0 4px 24px rgba(14,31,61,0.12); }
+.doctor-grid h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; margin-bottom: 12px; }
+.doctor-grid p { color: #4b5563; line-height: 1.7; margin-bottom: 14px; }
+.cro-badge { display: inline-block; background: var(--navy); color: var(--gold-light); font-size: 0.78rem; padding: 6px 14px; border-radius: 99px; font-weight: 500; }
+.services-list { list-style: none; margin: 18px 0; padding: 0; }
+.services-list li { padding: 6px 0; color: var(--navy); font-size: 0.98rem; }
+.services-list li::before { content: "✓ "; color: var(--gold); font-weight: 700; }
+.benefits { padding: 56px 24px; max-width: 800px; margin: 0 auto; text-align: center; }
+.benefits h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
+.benefits .subtitle { color: #6b7280; font-size: 0.9rem; margin-bottom: 40px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; text-align: left; }
+.card { background: #fff; border-radius: 16px; padding: 28px 24px; box-shadow: 0 2px 16px rgba(14,31,61,0.07); border-top: 3px solid var(--gold); }
+.card .icon { font-size: 1.8rem; margin-bottom: 12px; }
+.card h3 { font-size: 0.95rem; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+.card p { font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
+.faq { padding: 56px 24px; max-width: 720px; margin: 0 auto; }
+.faq h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); text-align: center; margin-bottom: 8px; }
+.faq .subtitle { color: #6b7280; font-size: 0.9rem; text-align: center; margin-bottom: 40px; }
+.faq-item { background: #fff; border-radius: 14px; padding: 22px 24px; margin-bottom: 14px; box-shadow: 0 2px 12px rgba(14,31,61,0.06); }
+.faq-item h3 { font-size: 0.98rem; color: var(--navy); margin-bottom: 8px; font-weight: 500; }
+.faq-item p { font-size: 0.88rem; color: #6b7280; line-height: 1.7; }
+.cta-section { padding: 56px 24px; text-align: center; max-width: 560px; margin: 0 auto; }
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 12px; }
+.cta-section p { color: #6b7280; font-size: 0.9rem; margin-bottom: 28px; line-height: 1.6; }
+.info-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.badge { background: #fff; border: 1px solid #e5e7eb; border-radius: 99px; padding: 6px 14px; font-size: 0.78rem; color: #374151; }
+.disclaimer { font-size: 0.72rem; color: #9ca3af; max-width: 640px; margin: 0 auto 40px; text-align: center; padding: 0 24px; line-height: 1.6; }
+footer { background: #0a1628; color: #64748b; text-align: center; padding: 24px; font-size: 0.78rem; line-height: 1.8; }
+footer a { color: var(--gold); text-decoration: none; }
+@media (max-width: 640px) { .doctor-grid { grid-template-columns: 1fr; text-align: center; } .doctor-grid .portrait img { max-width: 220px; margin: 0 auto; } }
+</style>
+<script type="application/ld+json">
 {
-  "name": "index.html",
-  "path": "harmonizacao-orofacial/index.html",
-  "sha": "1d9f2ff003918d4cde5c2c0726e2d0ecc95b3682",
-  "size": 18627,
-  "url": "https://api.github.com/repos/joicedicro/dicro-site/contents/harmonizacao-orofacial/index.html?ref=main",
-  "html_url": "https://github.com/joicedicro/dicro-site/blob/main/harmonizacao-orofacial/index.html",
-  "git_url": "https://api.github.com/repos/joicedicro/dicro-site/git/blobs/1d9f2ff003918d4cde5c2c0726e2d0ecc95b3682",
-  "download_url": "https://raw.githubusercontent.com/joicedicro/dicro-site/main/harmonizacao-orofacial/index.html",
-  "type": "file",
-  "content": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9InB0LUJSIj4KPGhlYWQ+Cjxt\nZXRhIGNoYXJzZXQ9IlVURi04Ii8+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBj\nb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4w\nIi8+Cjx0aXRsZT5IYXJtb25pemHDp8OjbyBPcm9mYWNpYWwgZW0gTWVzcXVp\ndGEsIFJKIOKAlCBEaWNyw7MgT2RvbnRvbG9naWEgRXNwZWNpYWxpemFkYTwv\ndGl0bGU+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSJIYXJt\nb25pemHDp8OjbyBPcm9mYWNpYWwgZW0gTWVzcXVpdGEvUkogY29tIGEgRHJh\nLiBBbGluZSBHYXR0aSDigJQgQ1JPLVJKIDUyNTUyLiBQcmVlbmNoaW1lbnRv\nIGxhYmlhbCwgdG94aW5hIGJvdHVsw61uaWNhLCBiaW9lc3RpbXVsYWRvcmVz\nIGUgbWFpcy4gQWdlbmRlIHVtYSBjb25zdWx0YSBwZWxvIFdoYXRzQXBwIG5h\nIERpY3LDsyBPZG9udG9sb2dpYS4iLz4KPGxpbmsgcmVsPSJjYW5vbmljYWwi\nIGhyZWY9Imh0dHBzOi8vd3d3LmRpY3JvLmNvbS5ici9oYXJtb25pemFjYW8t\nb3JvZmFjaWFsLyIvPgo8bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2ds\nZWFwaXMuY29tL2NzczI/ZmFtaWx5PVBsYXlmYWlyK0Rpc3BsYXk6d2dodEA0\nMDA7NzAwJmZhbWlseT1ETStTYW5zOndnaHRAMzAwOzQwMDs1MDAmZGlzcGxh\neT1zd2FwIiByZWw9InN0eWxlc2hlZXQiLz4KPHN0eWxlPgo6cm9vdCB7IC0t\nbmF2eTogIzBlMWYzZDsgLS1nb2xkOiAjYzlhODRjOyAtLWdvbGQtbGlnaHQ6\nICNlOGM5N2E7IC0tY3JlYW06ICNmYWY4ZjM7IC0tZ3JlZW4td2E6ICMyNUQz\nNjY7IC0tZ3JlZW4td2EtZGFyazogIzEyOEM3RTsgfQoqIHsgbWFyZ2luOiAw\nOyBwYWRkaW5nOiAwOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyB9CmJvZHkg\neyBmb250LWZhbWlseTogJ0RNIFNhbnMnLCBzYW5zLXNlcmlmOyBiYWNrZ3Jv\ndW5kOiB2YXIoLS1jcmVhbSk7IGNvbG9yOiB2YXIoLS1uYXZ5KTsgfQpoZWFk\nZXIgeyBiYWNrZ3JvdW5kOiB2YXIoLS1uYXZ5KTsgcGFkZGluZzogMTZweCAy\nNHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IH0KaGVhZGVyIC5icmFuZCB7IGZv\nbnQtZmFtaWx5OiAnUGxheWZhaXIgRGlzcGxheScsIHNlcmlmOyBjb2xvcjog\nI2ZmZjsgZm9udC1zaXplOiAxLjNyZW07IGZvbnQtd2VpZ2h0OiA3MDA7IH0K\naGVhZGVyIC5icmFuZC1zdWIgeyBjb2xvcjogdmFyKC0tZ29sZC1saWdodCk7\nIGZvbnQtc2l6ZTogMC43cmVtOyBsZXR0ZXItc3BhY2luZzogMC4xNGVtOyB0\nZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBmb250LXdlaWdodDogMzAwOyB9\nCi5oZXJvIHsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywg\ndmFyKC0tbmF2eSkgMCUsICMxYTM1NjAgMTAwJSk7IGNvbG9yOiAjZmZmOyBw\nYWRkaW5nOiA0OHB4IDI0cHg7IHRleHQtYWxpZ246IGNlbnRlcjsgfQouaGVy\nbyBoMSB7IGZvbnQtZmFtaWx5OiAnUGxheWZhaXIgRGlzcGxheScsIHNlcmlm\nOyBmb250LXNpemU6IGNsYW1wKDEuNnJlbSwgNHZ3LCAyLjRyZW0pOyBtYXJn\naW4tYm90dG9tOiAxMnB4OyBsaW5lLWhlaWdodDogMS4yNTsgfQouaGVybyBw\nIHsgY29sb3I6ICNjYmQ1ZTE7IGZvbnQtc2l6ZTogMXJlbTsgbWF4LXdpZHRo\nOiA1NjBweDsgbWFyZ2luOiAwIGF1dG8gMzJweDsgbGluZS1oZWlnaHQ6IDEu\nNzsgfQouYnRuLXdhIHsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0\nZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBnYXA6IDEw\ncHg7IGJhY2tncm91bmQ6IHZhcigtLWdyZWVuLXdhKTsgY29sb3I6ICNmZmY7\nIGZvbnQtZmFtaWx5OiAnRE0gU2FucycsIHNhbnMtc2VyaWY7IGZvbnQtc2l6\nZTogMXJlbTsgZm9udC13ZWlnaHQ6IDUwMDsgcGFkZGluZzogMTZweCAzNnB4\nOyBib3JkZXItcmFkaXVzOiAxMnB4OyB0ZXh0LWRlY29yYXRpb246IG5vbmU7\nIHRyYW5zaXRpb246IGJhY2tncm91bmQgMC4yczsgbWF4LXdpZHRoOiAzNjBw\neDsgd2lkdGg6IDEwMCU7IH0KLmJ0bi13YTpob3ZlciB7IGJhY2tncm91bmQ6\nIHZhcigtLWdyZWVuLXdhLWRhcmspOyB9Ci5idG4td2Egc3ZnIHsgd2lkdGg6\nIDIycHg7IGhlaWdodDogMjJweDsgZmlsbDogI2ZmZjsgZmxleC1zaHJpbms6\nIDA7IH0KLmRvY3RvciB7IHBhZGRpbmc6IDU2cHggMjRweDsgbWF4LXdpZHRo\nOiA5MDBweDsgbWFyZ2luOiAwIGF1dG87IH0KLmRvY3Rvci1ncmlkIHsgZGlz\ncGxheTogZ3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAyMjBweCAxZnI7\nIGdhcDogNDBweDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgfQouZG9jdG9yLWdy\naWQgLnBvcnRyYWl0IGltZyB7IHdpZHRoOiAxMDAlOyBib3JkZXItcmFkaXVz\nOiAxNnB4OyBib3gtc2hhZG93OiAwIDRweCAyNHB4IHJnYmEoMTQsMzEsNjEs\nMC4xMik7IH0KLmRvY3Rvci1ncmlkIGgyIHsgZm9udC1mYW1pbHk6ICdQbGF5\nZmFpciBEaXNwbGF5Jywgc2VyaWY7IGZvbnQtc2l6ZTogMS43cmVtOyBtYXJn\naW4tYm90dG9tOiAxMnB4OyB9Ci5kb2N0b3ItZ3JpZCBwIHsgY29sb3I6ICM0\nYjU1NjM7IGxpbmUtaGVpZ2h0OiAxLjc7IG1hcmdpbi1ib3R0b206IDE0cHg7\nIH0KLmNyby1iYWRnZSB7IGRpc3BsYXk6IGlubGluZS1ibG9jazsgYmFja2dy\nb3VuZDogdmFyKC0tbmF2eSk7IGNvbG9yOiB2YXIoLS1nb2xkLWxpZ2h0KTsg\nZm9udC1zaXplOiAwLjc4cmVtOyBwYWRkaW5nOiA2cHggMTRweDsgYm9yZGVy\nLXJhZGl1czogOTlweDsgZm9udC13ZWlnaHQ6IDUwMDsgfQouc2VydmljZXMt\nbGlzdCB7IGxpc3Qtc3R5bGU6IG5vbmU7IG1hcmdpbjogMThweCAwOyBwYWRk\naW5nOiAwOyB9Ci5zZXJ2aWNlcy1saXN0IGxpIHsgcGFkZGluZzogNnB4IDA7\nIGNvbG9yOiB2YXIoLS1uYXZ5KTsgZm9udC1zaXplOiAwLjk4cmVtOyB9Ci5z\nZXJ2aWNlcy1saXN0IGxpOjpiZWZvcmUgeyBjb250ZW50OiAi4pyTICI7IGNv\nbG9yOiB2YXIoLS1nb2xkKTsgZm9udC13ZWlnaHQ6IDcwMDsgfQouYmVuZWZp\ndHMgeyBwYWRkaW5nOiA1NnB4IDI0cHg7IG1heC13aWR0aDogODAwcHg7IG1h\ncmdpbjogMCBhdXRvOyB0ZXh0LWFsaWduOiBjZW50ZXI7IH0KLmJlbmVmaXRz\nIGgyIHsgZm9udC1mYW1pbHk6ICdQbGF5ZmFpciBEaXNwbGF5Jywgc2VyaWY7\nIGZvbnQtc2l6ZTogMS42cmVtOyBjb2xvcjogdmFyKC0tbmF2eSk7IG1hcmdp\nbi1ib3R0b206IDhweDsgfQouYmVuZWZpdHMgLnN1YnRpdGxlIHsgY29sb3I6\nICM2YjcyODA7IGZvbnQtc2l6ZTogMC45cmVtOyBtYXJnaW4tYm90dG9tOiA0\nMHB4OyB9Ci5jYXJkcyB7IGRpc3BsYXk6IGdyaWQ7IGdyaWQtdGVtcGxhdGUt\nY29sdW1uczogcmVwZWF0KGF1dG8tZml0LCBtaW5tYXgoMjAwcHgsIDFmcikp\nOyBnYXA6IDI0cHg7IHRleHQtYWxpZ246IGxlZnQ7IH0KLmNhcmQgeyBiYWNr\nZ3JvdW5kOiAjZmZmOyBib3JkZXItcmFkaXVzOiAxNnB4OyBwYWRkaW5nOiAy\nOHB4IDI0cHg7IGJveC1zaGFkb3c6IDAgMnB4IDE2cHggcmdiYSgxNCwzMSw2\nMSwwLjA3KTsgYm9yZGVyLXRvcDogM3B4IHNvbGlkIHZhcigtLWdvbGQpOyB9\nCi5jYXJkIC5pY29uIHsgZm9udC1zaXplOiAxLjhyZW07IG1hcmdpbi1ib3R0\nb206IDEycHg7IH0KLmNhcmQgaDMgeyBmb250LXNpemU6IDAuOTVyZW07IGZv\nbnQtd2VpZ2h0OiA1MDA7IGNvbG9yOiB2YXIoLS1uYXZ5KTsgbWFyZ2luLWJv\ndHRvbTogNnB4OyB9Ci5jYXJkIHAgeyBmb250LXNpemU6IDAuODVyZW07IGNv\nbG9yOiAjNmI3MjgwOyBsaW5lLWhlaWdodDogMS42OyB9Ci5mYXEgeyBwYWRk\naW5nOiA1NnB4IDI0cHg7IG1heC13aWR0aDogNzIwcHg7IG1hcmdpbjogMCBh\ndXRvOyB9Ci5mYXEgaDIgeyBmb250LWZhbWlseTogJ1BsYXlmYWlyIERpc3Bs\nYXknLCBzZXJpZjsgZm9udC1zaXplOiAxLjZyZW07IGNvbG9yOiB2YXIoLS1u\nYXZ5KTsgdGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW4tYm90dG9tOiA4cHg7\nIH0KLmZhcSAuc3VidGl0bGUgeyBjb2xvcjogIzZiNzI4MDsgZm9udC1zaXpl\nOiAwLjlyZW07IHRleHQtYWxpZ246IGNlbnRlcjsgbWFyZ2luLWJvdHRvbTog\nNDBweDsgfQouZmFxLWl0ZW0geyBiYWNrZ3JvdW5kOiAjZmZmOyBib3JkZXIt\ncmFkaXVzOiAxNHB4OyBwYWRkaW5nOiAyMnB4IDI0cHg7IG1hcmdpbi1ib3R0\nb206IDE0cHg7IGJveC1zaGFkb3c6IDAgMnB4IDEycHggcmdiYSgxNCwzMSw2\nMSwwLjA2KTsgfQouZmFxLWl0ZW0gaDMgeyBmb250LXNpemU6IDAuOThyZW07\nIGNvbG9yOiB2YXIoLS1uYXZ5KTsgbWFyZ2luLWJvdHRvbTogOHB4OyBmb250\nLXdlaWdodDogNTAwOyB9Ci5mYXEtaXRlbSBwIHsgZm9udC1zaXplOiAwLjg4\ncmVtOyBjb2xvcjogIzZiNzI4MDsgbGluZS1oZWlnaHQ6IDEuNzsgfQouY3Rh\nLXNlY3Rpb24geyBwYWRkaW5nOiA1NnB4IDI0cHg7IHRleHQtYWxpZ246IGNl\nbnRlcjsgbWF4LXdpZHRoOiA1NjBweDsgbWFyZ2luOiAwIGF1dG87IH0KLmN0\nYS1zZWN0aW9uIGgyIHsgZm9udC1mYW1pbHk6ICdQbGF5ZmFpciBEaXNwbGF5\nJywgc2VyaWY7IGZvbnQtc2l6ZTogMS41cmVtOyBjb2xvcjogdmFyKC0tbmF2\neSk7IG1hcmdpbi1ib3R0b206IDEycHg7IH0KLmN0YS1zZWN0aW9uIHAgeyBj\nb2xvcjogIzZiNzI4MDsgZm9udC1zaXplOiAwLjlyZW07IG1hcmdpbi1ib3R0\nb206IDI4cHg7IGxpbmUtaGVpZ2h0OiAxLjY7IH0KLmluZm8tYmFkZ2VzIHsg\nZGlzcGxheTogZmxleDsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IGdhcDog\nMTJweDsgZmxleC13cmFwOiB3cmFwOyBtYXJnaW4tYm90dG9tOiAyOHB4OyB9\nCi5iYWRnZSB7IGJhY2tncm91bmQ6ICNmZmY7IGJvcmRlcjogMXB4IHNvbGlk\nICNlNWU3ZWI7IGJvcmRlci1yYWRpdXM6IDk5cHg7IHBhZGRpbmc6IDZweCAx\nNHB4OyBmb250LXNpemU6IDAuNzhyZW07IGNvbG9yOiAjMzc0MTUxOyB9Ci5k\naXNjbGFpbWVyIHsgZm9udC1zaXplOiAwLjcycmVtOyBjb2xvcjogIzljYTNh\nZjsgbWF4LXdpZHRoOiA2NDBweDsgbWFyZ2luOiAwIGF1dG8gNDBweDsgdGV4\ndC1hbGlnbjogY2VudGVyOyBwYWRkaW5nOiAwIDI0cHg7IGxpbmUtaGVpZ2h0\nOiAxLjY7IH0KZm9vdGVyIHsgYmFja2dyb3VuZDogIzBhMTYyODsgY29sb3I6\nICM2NDc0OGI7IHRleHQtYWxpZ246IGNlbnRlcjsgcGFkZGluZzogMjRweDsg\nZm9udC1zaXplOiAwLjc4cmVtOyBsaW5lLWhlaWdodDogMS44OyB9CmZvb3Rl\nciBhIHsgY29sb3I6IHZhcigtLWdvbGQpOyB0ZXh0LWRlY29yYXRpb246IG5v\nbmU7IH0KQG1lZGlhIChtYXgtd2lkdGg6IDY0MHB4KSB7IC5kb2N0b3ItZ3Jp\nZCB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogMWZyOyB0ZXh0LWFsaWduOiBj\nZW50ZXI7IH0gLmRvY3Rvci1ncmlkIC5wb3J0cmFpdCBpbWcgeyBtYXgtd2lk\ndGg6IDIyMHB4OyBtYXJnaW46IDAgYXV0bzsgfSB9Cjwvc3R5bGU+CjxzY3Jp\ncHQgdHlwZT0iYXBwbGljYXRpb24vbGQranNvbiI+CnsKICAiQGNvbnRleHQi\nOiAiaHR0cHM6Ly9zY2hlbWEub3JnIiwKICAiQHR5cGUiOiAiRkFRUGFnZSIs\nCiAgIm1haW5FbnRpdHkiOiBbCiAgICB7CiAgICAgICJAdHlwZSI6ICJRdWVz\ndGlvbiIsCiAgICAgICJuYW1lIjogIk8gcXVlIMOpIEhhcm1vbml6YcOnw6Nv\nIE9yb2ZhY2lhbD8iLAogICAgICAiYWNjZXB0ZWRBbnN3ZXIiOiB7ICJAdHlw\nZSI6ICJBbnN3ZXIiLCAidGV4dCI6ICLDiSB1bSBjb25qdW50byBkZSBwcm9j\nZWRpbWVudG9zIHJlYWxpemFkb3MgcG9yIGNpcnVyZ2nDoy1kZW50aXN0YSBo\nYWJpbGl0YWRhLCB2b2x0YWRvcyBwYXJhIG8gZXF1aWzDrWJyaW8gZXN0w6l0\naWNvIGRhIGZhY2UgZSBkYSByZWdpw6NvIGRhIGJvY2EsIGNvbW8gcHJlZW5j\naGltZW50byBsYWJpYWwsIHRveGluYSBib3R1bMOtbmljYSBlIGJpb2VzdGlt\ndWxhZG9yZXMgZGUgY29sw6FnZW5vLiBDYWRhIGNhc28gw6kgYW5hbGlzYWRv\nIGluZGl2aWR1YWxtZW50ZSBuYSBjb25zdWx0YS4iIH0KICAgIH0sCiAgICB7\nCiAgICAgICJAdHlwZSI6ICJRdWVzdGlvbiIsCiAgICAgICJuYW1lIjogIkhh\ncm1vbml6YcOnw6NvIE9yb2ZhY2lhbCBkw7NpPyIsCiAgICAgICJhY2NlcHRl\nZEFuc3dlciI6IHsgIkB0eXBlIjogIkFuc3dlciIsICJ0ZXh0IjogIk9zIHBy\nb2NlZGltZW50b3MgY29zdHVtYW0gdXNhciBhbmVzdMOpc2ljbyB0w7NwaWNv\nIG91IGxvY2FsLCBlIGEgbWFpb3JpYSBkYXMgcGFjaWVudGVzIHJlbGF0YSBk\nZXNjb25mb3J0byBsZXZlLiBBIHNlbnNhw6fDo28gdmFyaWEgZGUgcGVzc29h\nIHBhcmEgcGVzc29hIGUgw6kgZGlzY3V0aWRhIGR1cmFudGUgYSBjb25zdWx0\nYS4iIH0KICAgIH0sCiAgICB7CiAgICAgICJAdHlwZSI6ICJRdWVzdGlvbiIs\nCiAgICAgICJuYW1lIjogIlF1YW50byB0ZW1wbyBkdXJhIG8gcmVzdWx0YWRv\nIGRhIEhhcm1vbml6YcOnw6NvIE9yb2ZhY2lhbD8iLAogICAgICAiYWNjZXB0\nZWRBbnN3ZXIiOiB7ICJAdHlwZSI6ICJBbnN3ZXIiLCAidGV4dCI6ICJEZXBl\nbmRlIGRvIHByb2NlZGltZW50bzogdG94aW5hIGJvdHVsw61uaWNhIGNvc3R1\nbWEgZHVyYXIgZGUgNCBhIDYgbWVzZXMsIGVucXVhbnRvIHByZWVuY2hpbWVu\ndG9zIGUgYmlvZXN0aW11bGFkb3JlcyBwb2RlbSBkdXJhciBtYWlzIHRlbXBv\nLiBPIHBsYW5vIGRlIG1hbnV0ZW7Dp8OjbyDDqSBkZWZpbmlkbyBjb25mb3Jt\nZSBvIG9iamV0aXZvIGRlIGNhZGEgcGFjaWVudGUuIiB9CiAgICB9LAogICAg\newogICAgICAiQHR5cGUiOiAiUXVlc3Rpb24iLAogICAgICAibmFtZSI6ICJR\ndWVtIHBvZGUgZmF6ZXIgSGFybW9uaXphw6fDo28gT3JvZmFjaWFsPyIsCiAg\nICAgICJhY2NlcHRlZEFuc3dlciI6IHsgIkB0eXBlIjogIkFuc3dlciIsICJ0\nZXh0IjogIkNpcnVyZ2nDo3MtZGVudGlzdGFzIGhhYmlsaXRhZGFzIHBlbG8g\nQ1JPIHBvZGVtIHJlYWxpemFyIHByb2NlZGltZW50b3MgZGUgSGFybW9uaXph\nw6fDo28gT3JvZmFjaWFsIGRlbnRybyBkbyBzZXUgZXNjb3BvIGRlIGF0dWHD\np8Ojby4gTmEgRGljcsOzIE9kb250b2xvZ2lhLCBvcyBwcm9jZWRpbWVudG9z\nIHPDo28gcmVhbGl6YWRvcyBwZWxhIERyYS4gQWxpbmUgR2F0dGksIENSTy1S\nSiA1MjU1Mi4iIH0KICAgIH0sCiAgICB7CiAgICAgICJAdHlwZSI6ICJRdWVz\ndGlvbiIsCiAgICAgICJuYW1lIjogIkhhcm1vbml6YcOnw6NvIE9yb2ZhY2lh\nbCB0ZW0gY29udHJhaW5kaWNhw6fDo28/IiwKICAgICAgImFjY2VwdGVkQW5z\nd2VyIjogeyAiQHR5cGUiOiAiQW5zd2VyIiwgInRleHQiOiAiQWxndW1hcyBj\nb25kacOnw7VlcyBkZSBzYcO6ZGUgZSBmYXNlcyBjb21vIGdlc3Rhw6fDo28g\ncG9kZW0gY29udHJhaW5kaWNhciBjZXJ0b3MgcHJvY2VkaW1lbnRvcy4gQSBh\nbsOhbGlzZSBpbmRpdmlkdWFsIG5hIGNvbnN1bHRhIGRldGVybWluYSBvIHF1\nZSDDqSBzZWd1cm8gZSBpbmRpY2FkbyBwYXJhIGNhZGEgcGFjaWVudGUuIiB9\nCiAgICB9LAogICAgewogICAgICAiQHR5cGUiOiAiUXVlc3Rpb24iLAogICAg\nICAibmFtZSI6ICJEw6EgcHJhIHBhcmNlbGFyIG9zIHByb2NlZGltZW50b3Mg\nZGUgSGFybW9uaXphw6fDo28gT3JvZmFjaWFsPyIsCiAgICAgICJhY2NlcHRl\nZEFuc3dlciI6IHsgIkB0eXBlIjogIkFuc3dlciIsICJ0ZXh0IjogIlNpbS4g\nQSBEaWNyw7MgT2RvbnRvbG9naWEgdHJhYmFsaGEgY29tIHBhcmNlbGFtZW50\nbyBlIHBhcmNlcmlhIGNvbSBmaW5hbmNpYW1lbnRvIG9kb250b2zDs2dpY28g\nKEpMZmFzdGNyZWQpIHBhcmEgZmFjaWxpdGFyIG8gcGFnYW1lbnRvIGRvcyBw\ncm9jZWRpbWVudG9zLiBBcyBjb25kacOnw7VlcyBzw6NvIGFwcmVzZW50YWRh\ncyBuYSBjb25zdWx0YS4iIH0KICAgIH0sCiAgICB7CiAgICAgICJAdHlwZSI6\nICJRdWVzdGlvbiIsCiAgICAgICJuYW1lIjogIlF1YW50byB0ZW1wbyBkZSBy\nZXBvdXNvIMOpIG5lY2Vzc8OhcmlvIGFww7NzIG8gcHJvY2VkaW1lbnRvPyIs\nCiAgICAgICJhY2NlcHRlZEFuc3dlciI6IHsgIkB0eXBlIjogIkFuc3dlciIs\nICJ0ZXh0IjogIk5hIG1haW9yaWEgZG9zIGNhc29zIG7Do28gaMOhIG5lY2Vz\nc2lkYWRlIGRlIHJlcG91c28gcHJvbG9uZ2FkbywgbWFzIGFsZ3VucyBjdWlk\nYWRvcyBww7NzLXByb2NlZGltZW50byBzw6NvIG9yaWVudGFkb3MgcGVsYSBl\ncXVpcGUsIGNvbW8gZXZpdGFyIGV4cG9zacOnw6NvIGFvIHNvbCBlIGF0aXZp\nZGFkZXMgZsOtc2ljYXMgaW50ZW5zYXMgbmFzIHByaW1laXJhcyBob3Jhcy4i\nIH0KICAgIH0sCiAgICB7CiAgICAgICJAdHlwZSI6ICJRdWVzdGlvbiIsCiAg\nICAgICJuYW1lIjogIlBvc3NvIGZhemVyIEhhcm1vbml6YcOnw6NvIE9yb2Zh\nY2lhbCBzZSBlc3RpdmVyIGFtYW1lbnRhbmRvPyIsCiAgICAgICJhY2NlcHRl\nZEFuc3dlciI6IHsgIkB0eXBlIjogIkFuc3dlciIsICJ0ZXh0IjogIkEgZ2Vz\ndGHDp8OjbyBlIGEgYW1hbWVudGHDp8OjbyBjb3N0dW1hbSBleGlnaXIgYW7D\noWxpc2UgY3VpZGFkb3NhIGFudGVzIGRlIHF1YWxxdWVyIHByb2NlZGltZW50\nbyBkZSBIYXJtb25pemHDp8OjbyBPcm9mYWNpYWwuIEVzc2UgaGlzdMOzcmlj\nbyDDqSBsZXZhbnRhZG8gbmEgY29uc3VsdGEgaW5pY2lhbCBwYXJhIGRlZmlu\naXIgbyBxdWUgw6kgc2VndXJvIG5lc3NlIG1vbWVudG8uIiB9Cn0sCnsKIkB0\neXBlIjogIlF1ZXN0aW9uIiwKIm5hbWUiOiAiT25kZSBmYXplciBoYXJtb25p\nemHDp8OjbyBvcm9mYWNpYWwgZW0gTWVzcXVpdGEgUko/IiwKImFjY2VwdGVk\nQW5zd2VyIjogeyAiQHR5cGUiOiAiQW5zd2VyIiwgInRleHQiOiAiQSBEaWNy\nw7MgT2RvbnRvbG9naWEgRXNwZWNpYWxpemFkYSwgZW0gTWVzcXVpdGEvUkos\nIG9mZXJlY2UgSGFybW9uaXphw6fDo28gT3JvZmFjaWFsIGNvbSBhIERyYS4g\nQWxpbmUgR2F0dGksIENSTy1SSiA1MjU1Mi4gTyBjb25zdWx0w7NyaW8gZmlj\nYSBuYSBQcmHDp2EgSm/Do28gTHVpeiBkbyBOYXNjaW1lbnRvLCAyOCwgTG9q\nYSAyLiIgfQp9LAp7CiJAdHlwZSI6ICJRdWVzdGlvbiIsCiJuYW1lIjogIlF1\nYW50byBjdXN0YSBoYXJtb25pemHDp8OjbyBvcm9mYWNpYWwgZW0gTWVzcXVp\ndGE/IiwKImFjY2VwdGVkQW5zd2VyIjogeyAiQHR5cGUiOiAiQW5zd2VyIiwg\nInRleHQiOiAiTyB2YWxvciBkZXBlbmRlIGRvIHByb2NlZGltZW50byAocHJl\nZW5jaGltZW50byBsYWJpYWwsIHRveGluYSBib3R1bMOtbmljYSBvdSBiaW9l\nc3RpbXVsYWRvcmVzKSBlIGRvIHBsYW5vIGRlZmluaWRvIHBhcmEgY2FkYSBw\nYWNpZW50ZS4gTyBvcsOnYW1lbnRvIMOpIGFwcmVzZW50YWRvIG5hIGNvbnN1\nbHRhIGNvbSBhIERyYS4gQWxpbmUgR2F0dGkuIiB9Cn0KICBdCn0KPC9zY3Jp\ncHQ+CjxzY3JpcHQgdHlwZT0iYXBwbGljYXRpb24vbGQranNvbiI+CnsKICAi\nQGNvbnRleHQiOiAiaHR0cHM6Ly9zY2hlbWEub3JnIiwKICAiQHR5cGUiOiAi\nRGVudGlzdCIsCiAgIm5hbWUiOiAiRGljcsOzIE9kb250b2xvZ2lhIEVzcGVj\naWFsaXphZGEiLAogICJpbWFnZSI6ICJodHRwczovL3d3dy5kaWNyby5jb20u\nYnIvbG9nby1kaWNyby5wbmciLAogICJ0ZWxlcGhvbmUiOiAiKzU1MjE5NzE2\nMDA4NzQiLAogICJwcmljZVJhbmdlIjogIiQiLAogICJhZGRyZXNzIjogewog\nICAgIkB0eXBlIjogIlBvc3RhbEFkZHJlc3MiLAogICAgInN0cmVldEFkZHJl\nc3MiOiAiUHJhw6dhIEpvw6NvIEx1aXogZG8gTmFzY2ltZW50bywgMjgsIExv\namEgMiIsCiAgICAiYWRkcmVzc0xvY2FsaXR5IjogIk1lc3F1aXRhIiwKICAg\nICJhZGRyZXNzUmVnaW9uIjogIlJKIiwKICAgICJhZGRyZXNzQ291bnRyeSI6\nICJCUiIKICB9LAogICJtZWRpY2FsU3BlY2lhbHR5IjogIkRlbnRpc3RyeSIs\nCiAgInBoeXNpY2lhbiI6IHsKICAgICJAdHlwZSI6ICJQaHlzaWNpYW4iLAog\nICAgIm5hbWUiOiAiRHJhLiBBbGluZSBHYXR0aSIsCiAgICAiaWRlbnRpZmll\nciI6ICJDUk8tUkogNTI1NTIiCiAgfSwKICAib3BlbmluZ0hvdXJzIjogIk1v\nLVNhIDA3OjAwLTIxOjAwIiwKICAidXJsIjogImh0dHBzOi8vd3d3LmRpY3Jv\nLmNvbS5ici9oYXJtb25pemFjYW8tb3JvZmFjaWFsLyIKfQo8L3NjcmlwdD4K\nPHNjcmlwdCBhc3luYyBzcmM9Imh0dHBzOi8vd3d3Lmdvb2dsZXRhZ21hbmFn\nZXIuY29tL2d0YWcvanM/aWQ9Ry1CN1NSRUpNQlE2Ij48L3NjcmlwdD4KPHNj\ncmlwdD53aW5kb3cuZGF0YUxheWVyPXdpbmRvdy5kYXRhTGF5ZXJ8fFtdO2Z1\nbmN0aW9uIGd0YWcoKXtkYXRhTGF5ZXIucHVzaChhcmd1bWVudHMpO31ndGFn\nKCdqcycsbmV3IERhdGUoKSk7Z3RhZygnY29uZmlnJywnRy1CN1NSRUpNQlE2\nJyk7Cgpkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdET01Db250ZW50TG9h\nZGVkJywgZnVuY3Rpb24oKSB7CgogIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JB\nbGwoJ2FbaHJlZio9IndhLm1lIl0sIGFbaHJlZio9IndoYXRzYXBwIl0sIGFb\naHJlZio9ImFwaS53aGF0c2FwcCJdJykuZm9yRWFjaChmdW5jdGlvbihlbCkg\newogICAgZWwuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbigp\nIHsKICAgICAgZ3RhZygnZXZlbnQnLCAnd2hhdHNhcHBfY2xpY2snLCB7CiAg\nICAgICAgZXZlbnRfY2F0ZWdvcnk6ICdDb250YXRvJywKICAgICAgICBldmVu\ndF9sYWJlbDogZWwudGV4dENvbnRlbnQudHJpbSgpIHx8ICdXaGF0c0FwcCcK\nICAgICAgfSk7CiAgICB9KTsKICB9KTsKCn0pOwo8L3NjcmlwdD4KPC9oZWFk\nPgo8Ym9keT4KPGhlYWRlcj4KICA8ZGl2IGNsYXNzPSJicmFuZCI+RGljcsOz\nIE9kb250b2xvZ2lhPC9kaXY+CiAgPGRpdiBjbGFzcz0iYnJhbmQtc3ViIj5F\nc3BlY2lhbGl6YWRhIMK3IE1lc3F1aXRhIC8gUko8L2Rpdj4KPC9oZWFkZXI+\nCjxzZWN0aW9uIGNsYXNzPSJoZXJvIj4KICA8aDE+SGFybW9uaXphw6fDo28g\nT3JvZmFjaWFsPGJyPmVtIE1lc3F1aXRhLCBSSjwvaDE+CiAgPHA+VHJhdGFt\nZW50b3MgcGFyYSBlcXVpbMOtYnJpbyBmYWNpYWwgZSB2YWxvcml6YcOnw6Nv\nIGRhIGJlbGV6YSBuYXR1cmFsLCBjb20gYSBEcmEuIEFsaW5lIEdhdHRpIOKA\nlCBDUk8tUkogNTI1NTIuIEFnZW5kZSB1bWEgY29uc3VsdGEgZSB0aXJlIHN1\nYXMgZMO6dmlkYXMgY29tIG5vc3NhIGVxdWlwZS48L3A+CiAgPGEgY2xhc3M9\nImJ0bi13YSIgaHJlZj0iaHR0cHM6Ly9hcGkud2hhdHNhcHAuY29tL3NlbmQv\nP3Bob25lPTU1MjE5NzE2MDA4NzQmdGV4dD1PbCVDMyVBMSElMjBWaW0lMjBw\nZWxvJTIwc2l0ZSUyMGUlMjBnb3N0YXJpYSUyMGRlJTIwYWdlbmRhciUyMHVt\nYSUyMGNvbnN1bHRhJTIwc29icmUlMjBIYXJtb25pemElQzMlQTclQzMlQTNv\nJTIwT3JvZmFjaWFsLiZ0eXBlPXBob25lX251bWJlciZhcHBfYWJzZW50PTAi\nPgogICAgPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0xNy40\nNzIgMTQuMzgyYy0uMjk3LS4xNDktMS43NTgtLjg2Ny0yLjAzLS45NjctLjI3\nMy0uMDk5LS40NzEtLjE0OC0uNjcuMTUtLjE5Ny0uMjk3LS43NjcuOTY2LS45\nNCAxLjE2NC0uMTczLjE5OS0uMzQ3LjIyMy0uNjQ0LjA3NS0uMjk3LS4xNS0x\nLjI1NS0uNDYzLTIuMzktMS40NzUtLjg4My0uNzg4LTEuNDgtMS43NjEtMS42\nNTMtMi4wNTktLjE3My0uMjk3LS4wMTgtLjQ1OC4xMy0uNjA2LjEzNC0uMTMz\nLjI5OC0uMzQ3LjQ0Ni0uNTIuMTQ5LS4xNzQuMTk4LS4yOTguMjk4LS40OTcu\nMDk5LS4xOTguMDUtLjM3MS0uMDI1LS41Mi0uMDc1LS4xNDktLjY2OS0xLjYx\nMi0uOTE2LTIuMjA3LS4yNDItLjU3OS0uNDg3LS41LS42NjktLjUxLS4xNzMt\nLjAwOC0uMzcxLS4wMS0uNTctLjAxLS4xOTggMC0uNTIuMDc0LS43OTIuMzcy\nLS4yNzIuMjk3LTEuMDQgMS4wMTYtMS4wNCAyLjQ3OSAwIDEuNDYyIDEuMDY1\nIDIuODc1IDEuMjEzIDMuMDc0LjE0OS4xOTggMi4wOTYgMy4yIDUuMDc3IDQu\nNDg3LjcwOS4zMDYgMS4yNjIuNDg5IDEuNjk0LjYyNS43MTIuMjI3IDEuMzYu\nMTk1IDEuODcxLjExOC41NzEtLjA4NSAxLjc1OC0uNzE5IDIuMDA2LTEuNDEz\nLjI0OC0uNjk0LjI0OC0xLjI4OS4xNzMtMS40MTMtLjA3NC0uMTI0LS4yNzIt\nLjE5OC0uNTctLjM0N20tNS40MjEgNy40MDNoLS4wMDRhOS44NyA5Ljg3IDAg\nMDEtNS4wMzEtMS4zNzhsLS4zNjEtLjIxNC0zLjc0MS45ODIuOTk4LTMuNjQ4\nLS4yMzUtLjM3NGE5Ljg2IDkuODYgMCAwMS0xLjUxLTUuMjZjLjAwMS01LjQ1\nIDQuNDM2LTkuODg0IDkuODg4LTkuODg0IDIuNjQgMCA1LjEyMiAxLjAzIDYu\nOTg4IDIuODk4YTkuODI1IDkuODI1IDAgMDEyLjg5MyA2Ljk5NGMtLjAwMyA1\nLjQ1LTQuNDM3IDkuODg0LTkuODg1IDkuODg0bTguNDEzLTE4LjI5N0ExMS44\nMTUgMTEuODE1IDAgMDAxMi4wNSAwQzUuNDk1IDAgLjE2IDUuMzM1LjE1NyAx\nMS44OTJjMCAyLjA5Ni41NDcgNC4xNDIgMS41ODggNS45NDVMLjA1NyAyNGw2\nLjMwNS0xLjY1NGExMS44ODIgMTEuODgyIDAgMDA1LjY4MyAxLjQ0OGguMDA1\nYzYuNTU0IDAgMTEuODktNS4zMzUgMTEuODkzLTExLjg5M2ExMS44MjEgMTEu\nODIxIDAgMDAtMy40OC04LjQxM3oiLz48L3N2Zz4KICAgIEFnZW5kYXIgY29u\nc3VsdGEgcGVsbyBXaGF0c0FwcAogIDwvYT4KPC9zZWN0aW9uPgoKPHNlY3Rp\nb24gY2xhc3M9ImRvY3RvciI+CiAgPGRpdiBjbGFzcz0iZG9jdG9yLWdyaWQi\nPgogICAgPGRpdiBjbGFzcz0icG9ydHJhaXQiPgogICAgICA8aW1nIHNyYz0i\nL2ltZy9oYXJtb25pemFjYW8vYWxpbmUtZ2F0dGktcGVyZmlsLmpwZyIgYWx0\nPSJEcmEuIEFsaW5lIEdhdHRpIiBsb2FkaW5nPSJsYXp5Ij4KICAgIDwvZGl2\nPgogICAgPGRpdj4KICAgICAgPGgyPkRyYS4gQWxpbmUgR2F0dGk8L2gyPgog\nICAgICA8cD5DaXJ1cmdpw6MtZGVudGlzdGEgY29tIGF0dWHDp8OjbyBlbSBI\nYXJtb25pemHDp8OjbyBPcm9mYWNpYWwsIG9mZXJlY2VuZG8gdHJhdGFtZW50\nb3Mgdm9sdGFkb3MgcGFyYSByZWp1dmVuZXNjaW1lbnRvLCBlcXVpbMOtYnJp\nbyBmYWNpYWwgZSB2YWxvcml6YcOnw6NvIGRhIGJlbGV6YSBuYXR1cmFsIOKA\nlCBhZ29yYSBuYSBEaWNyw7MgT2RvbnRvbG9naWEgRXNwZWNpYWxpemFkYS48\nL3A+CiAgICAgIDxzcGFuIGNsYXNzPSJjcm8tYmFkZ2UiPkNSTy1SSiA1MjU1\nMjwvc3Bhbj4KICAgICAgPHVsIGNsYXNzPSJzZXJ2aWNlcy1saXN0Ij4KICAg\nICAgICA8bGk+UHJlZW5jaGltZW50byBsYWJpYWw8L2xpPgogICAgICAgIDxs\naT5Ub3hpbmEgYm90dWzDrW5pY2EgKEJvdG94KTwvbGk+CiAgICAgICAgPGxp\nPkJpb2VzdGltdWxhZG9yZXMgZGUgY29sw6FnZW5vPC9saT4KICAgICAgICA8\nbGk+U2tpbmJvb3N0ZXI8L2xpPgogICAgICAgIDxsaT5GaW9zIGRlIHN1c3Rl\nbnRhw6fDo288L2xpPgogICAgICA8L3VsPgogICAgPC9kaXY+CiAgPC9kaXY+\nCjwvc2VjdGlvbj4KCjxzZWN0aW9uIGNsYXNzPSJiZW5lZml0cyI+CiAgPGgy\nPlBvciBxdWUgZmF6ZXIgSGFybW9uaXphw6fDo28gT3JvZmFjaWFsIG5hIERp\nY3LDszwvaDI+CiAgPHAgY2xhc3M9InN1YnRpdGxlIj5Qcm9jZWRpbWVudG9z\nIHJlYWxpemFkb3MgcG9yIGNpcnVyZ2nDoy1kZW50aXN0YSBoYWJpbGl0YWRh\nLCBkZW50cm8gZGEgcHLDs3ByaWEgY2zDrW5pY2E8L3A+CiAgPGRpdiBjbGFz\ncz0iY2FyZHMiPgogICAgPGRpdiBjbGFzcz0iY2FyZCI+PGRpdiBjbGFzcz0i\naWNvbiI+4pyoPC9kaXY+PGgzPlJlc3VsdGFkbyBuYXR1cmFsPC9oMz48cD5Q\ncm9jZWRpbWVudG9zIHBsYW5lamFkb3MgcGFyYSB2YWxvcml6YXIgc3VhcyBj\nYXJhY3RlcsOtc3RpY2FzLCBzZW0gZXhhZ2Vyb3MuPC9wPjwvZGl2PgogICAg\nPGRpdiBjbGFzcz0iY2FyZCI+PGRpdiBjbGFzcz0iaWNvbiI+8J+TjTwvZGl2\nPjxoMz5BdGVuZGltZW50byBlbSBNZXNxdWl0YTwvaDM+PHA+Q29uc3VsdMOz\ncmlvIG5vIGNlbnRybyBkZSBNZXNxdWl0YS9SSiwgcHLDs3hpbW8gZGUgcXVl\nbSB2aXZlIG5hIEJhaXhhZGEgRmx1bWluZW5zZS48L3A+PC9kaXY+CiAgICA8\nZGl2IGNsYXNzPSJjYXJkIj48ZGl2IGNsYXNzPSJpY29uIj7wn5OLPC9kaXY+\nPGgzPkFuw6FsaXNlIGluZGl2aWR1YWw8L2gzPjxwPlBsYW5vIGRlIHRyYXRh\nbWVudG8gY29udmVyc2FkbyBlIGV4cGxpY2FkbyBhbnRlcyBkZSBxdWFscXVl\nciBwcm9jZWRpbWVudG8uPC9wPjwvZGl2PgogICAgPGRpdiBjbGFzcz0iY2Fy\nZCI+PGRpdiBjbGFzcz0iaWNvbiI+8J+PpTwvZGl2PjxoMz5Qcm9maXNzaW9u\nYWwgaGFiaWxpdGFkYTwvaDM+PHA+UHJvY2VkaW1lbnRvcyByZWFsaXphZG9z\nIHBlbGEgRHJhLiBBbGluZSBHYXR0aSwgQ1JPLVJKIDUyNTUyLjwvcD48L2Rp\ndj4KICA8L2Rpdj4KPC9zZWN0aW9uPgoKCgo8c2VjdGlvbiBjbGFzcz0iZmFx\nIj4KICA8aDI+RMO6dmlkYXMgZnJlcXVlbnRlcyBzb2JyZSBIYXJtb25pemHD\np8OjbyBPcm9mYWNpYWw8L2gyPgogIDxwIGNsYXNzPSJzdWJ0aXRsZSI+UmVz\ncG9zdGFzIGdlcmFpcyDigJQgc2V1IGNhc28gw6kgYW5hbGlzYWRvIGluZGl2\naWR1YWxtZW50ZSBuYSBjb25zdWx0YTwvcD4KICA8ZGl2IGNsYXNzPSJmYXEt\naXRlbSI+PGgzPk8gcXVlIMOpIEhhcm1vbml6YcOnw6NvIE9yb2ZhY2lhbD88\nL2gzPjxwPsOJIHVtIGNvbmp1bnRvIGRlIHByb2NlZGltZW50b3MgcmVhbGl6\nYWRvcyBwb3IgY2lydXJnacOjLWRlbnRpc3RhIGhhYmlsaXRhZGEsIHZvbHRh\nZG9zIHBhcmEgbyBlcXVpbMOtYnJpbyBlc3TDqXRpY28gZGEgZmFjZSBlIGRh\nIHJlZ2nDo28gZGEgYm9jYSwgY29tbyBwcmVlbmNoaW1lbnRvIGxhYmlhbCwg\ndG94aW5hIGJvdHVsw61uaWNhIGUgYmlvZXN0aW11bGFkb3JlcyBkZSBjb2zD\noWdlbm8uPC9wPjwvZGl2PgogIDxkaXYgY2xhc3M9ImZhcS1pdGVtIj48aDM+\nSGFybW9uaXphw6fDo28gT3JvZmFjaWFsIGTDs2k/PC9oMz48cD5PcyBwcm9j\nZWRpbWVudG9zIGNvc3R1bWFtIHVzYXIgYW5lc3TDqXNpY28gdMOzcGljbyBv\ndSBsb2NhbCwgZSBhIG1haW9yaWEgZGFzIHBhY2llbnRlcyByZWxhdGEgZGVz\nY29uZm9ydG8gbGV2ZS4gQSBzZW5zYcOnw6NvIHZhcmlhIGRlIHBlc3NvYSBw\nYXJhIHBlc3NvYS48L3A+PC9kaXY+CiAgPGRpdiBjbGFzcz0iZmFxLWl0ZW0i\nPjxoMz5RdWFudG8gdGVtcG8gZHVyYSBvIHJlc3VsdGFkbz88L2gzPjxwPkRl\ncGVuZGUgZG8gcHJvY2VkaW1lbnRvOiB0b3hpbmEgYm90dWzDrW5pY2EgY29z\ndHVtYSBkdXJhciBkZSA0IGEgNiBtZXNlcywgZW5xdWFudG8gcHJlZW5jaGlt\nZW50b3MgZSBiaW9lc3RpbXVsYWRvcmVzIHBvZGVtIGR1cmFyIG1haXMgdGVt\ncG8uPC9wPjwvZGl2PgogIDxkaXYgY2xhc3M9ImZhcS1pdGVtIj48aDM+UXVl\nbSByZWFsaXphIG9zIHByb2NlZGltZW50b3M/PC9oMz48cD5OYSBEaWNyw7Mg\nT2RvbnRvbG9naWEsIG9zIHByb2NlZGltZW50b3Mgc8OjbyByZWFsaXphZG9z\nIHBlbGEgRHJhLiBBbGluZSBHYXR0aSwgY2lydXJnacOjLWRlbnRpc3RhIENS\nTy1SSiA1MjU1MiwgaGFiaWxpdGFkYSBwYXJhIGF0dWHDp8OjbyBlbSBIYXJt\nb25pemHDp8OjbyBPcm9mYWNpYWwuPC9wPjwvZGl2PgogIDxkaXYgY2xhc3M9\nImZhcS1pdGVtIj48aDM+VGVtIGNvbnRyYWluZGljYcOnw6NvPzwvaDM+PHA+\nQWxndW1hcyBjb25kacOnw7VlcyBkZSBzYcO6ZGUgZSBmYXNlcyBjb21vIGdl\nc3Rhw6fDo28gcG9kZW0gY29udHJhaW5kaWNhciBjZXJ0b3MgcHJvY2VkaW1l\nbnRvcy4gQSBhbsOhbGlzZSBpbmRpdmlkdWFsIG5hIGNvbnN1bHRhIGRldGVy\nbWluYSBvIHF1ZSDDqSBzZWd1cm8gZSBpbmRpY2Fkby48L3A+PC9kaXY+CiAg\nPGRpdiBjbGFzcz0iZmFxLWl0ZW0iPjxoMz5Ew6EgcHJhIHBhcmNlbGFyIG9z\nIHByb2NlZGltZW50b3M/PC9oMz48cD5TaW0uIEEgRGljcsOzIE9kb250b2xv\nZ2lhIHRyYWJhbGhhIGNvbSBwYXJjZWxhbWVudG8gZSBwYXJjZXJpYSBjb20g\nZmluYW5jaWFtZW50byBvZG9udG9sw7NnaWNvIChKTGZhc3RjcmVkKSBwYXJh\nIGZhY2lsaXRhciBvIHBhZ2FtZW50by4gQXMgY29uZGnDp8O1ZXMgc8OjbyBh\ncHJlc2VudGFkYXMgbmEgY29uc3VsdGEuPC9wPjwvZGl2PgogIDxkaXYgY2xh\nc3M9ImZhcS1pdGVtIj48aDM+UXVhbnRvIHRlbXBvIGRlIHJlcG91c28gw6kg\nbmVjZXNzw6FyaW8gYXDDs3MgbyBwcm9jZWRpbWVudG8/PC9oMz48cD5OYSBt\nYWlvcmlhIGRvcyBjYXNvcyBuw6NvIGjDoSByZXBvdXNvIHByb2xvbmdhZG8s\nIG1hcyBhbGd1bnMgY3VpZGFkb3Mgc8OjbyBvcmllbnRhZG9zIHBlbGEgZXF1\naXBlLCBjb21vIGV2aXRhciBzb2wgZSBhdGl2aWRhZGVzIGbDrXNpY2FzIGlu\ndGVuc2FzIG5hcyBwcmltZWlyYXMgaG9yYXMuPC9wPjwvZGl2PgogIDxkaXYg\nY2xhc3M9ImZhcS1pdGVtIj48aDM+UG9zc28gZmF6ZXIgc2UgZXN0aXZlciBh\nbWFtZW50YW5kbz88L2gzPjxwPkEgZ2VzdGHDp8OjbyBlIGEgYW1hbWVudGHD\np8OjbyBjb3N0dW1hbSBleGlnaXIgYW7DoWxpc2UgY3VpZGFkb3NhIGFudGVz\nIGRvIHByb2NlZGltZW50by4gRXNzZSBoaXN0w7NyaWNvIMOpIGxldmFudGFk\nbyBuYSBjb25zdWx0YSBpbmljaWFsIHBhcmEgZGVmaW5pciBvIHF1ZSDDqSBz\nZWd1cm8gbmVzc2UgbW9tZW50by48L3A+PC9kaXY+Cjwvc2VjdGlvbj4KCjxz\nZWN0aW9uIGNsYXNzPSJjdGEtc2VjdGlvbiI+CiAgPGgyPlF1ZXIgc2FiZXIg\ncXVhbCBwcm9jZWRpbWVudG8gw6kgaW5kaWNhZG8gcHJhIHZvY8OqPzwvaDI+\nCiAgPHA+RmFsZSBjb20gbm9zc2EgZXF1aXBlIHBlbG8gV2hhdHNBcHAgZSBh\nZ2VuZGUgdW1hIGNvbnN1bHRhIGNvbSBhIERyYS4gQWxpbmUgR2F0dGkgbmEg\nRGljcsOzIE9kb250b2xvZ2lhLCBlbSBNZXNxdWl0YS9SSi48L3A+CiAgPGRp\ndiBjbGFzcz0iaW5mby1iYWRnZXMiPgogICAgPHNwYW4gY2xhc3M9ImJhZGdl\nIj7wn5ONIE1lc3F1aXRhIC8gUko8L3NwYW4+CiAgICA8c3BhbiBjbGFzcz0i\nYmFkZ2UiPuKPsCBTZWfigJNTw6FiPC9zcGFuPgogICAgPHNwYW4gY2xhc3M9\nImJhZGdlIj7inIUgUmVzcG9zdGEgcsOhcGlkYTwvc3Bhbj4KICAgIDxzcGFu\nIGNsYXNzPSJiYWRnZSI+8J+PpSBDUk8tUkogNTI1NTI8L3NwYW4+CiAgPC9k\naXY+CiAgPGEgY2xhc3M9ImJ0bi13YSIgc3R5bGU9Im1hcmdpbjowIGF1dG87\nIiBocmVmPSJodHRwczovL2FwaS53aGF0c2FwcC5jb20vc2VuZC8/cGhvbmU9\nNTUyMTk3MTYwMDg3NCZ0ZXh0PU9sJUMzJUExISUyMFZpbSUyMHBlbG8lMjBz\naXRlJTIwZSUyMGdvc3RhcmlhJTIwZGUlMjBhZ2VuZGFyJTIwdW1hJTIwY29u\nc3VsdGElMjBzb2JyZSUyMEhhcm1vbml6YSVDMyVBNyVDMyVBM28lMjBPcm9m\nYWNpYWwuJnR5cGU9cGhvbmVfbnVtYmVyJmFwcF9hYnNlbnQ9MCI+CiAgICA8\nc3ZnIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE3LjQ3MiAxNC4z\nODJjLS4yOTctLjE0OS0xLjc1OC0uODY3LTIuMDMtLjk2Ny0uMjczLS4wOTkt\nLjQ3MS0uMTQ4LS42Ny4xNS0uMTk3LS4yOTctLjc2Ny45NjYtLjk0IDEuMTY0\nLS4xNzMuMTk5LS4zNDcuMjIzLS42NDQuMDc1LS4yOTctLjE1LTEuMjU1LS40\nNjMtMi4zOS0xLjQ3NS0uODgzLS43ODgtMS40OC0xLjc2MS0xLjY1My0yLjA1\nOS0uMTczLS4yOTctLjAxOC0uNDU4LjEzLS42MDYuMTM0LS4xMzMuMjk4LS4z\nNDcuNDQ2LS41Mi4xNDktLjE3NC4xOTgtLjI5OC4yOTgtLjQ5Ny4wOTktLjE5\nOC4wNS0uMzcxLS4wMjUtLjUyLS4wNzUtLjE0OS0uNjY5LTEuNjEyLS45MTYt\nMi4yMDctLjI0Mi0uNTc5LS40ODctLjUtLjY2OS0uNTEtLjE3My0uMDA4LS4z\nNzEtLjAxLS41Ny0uMDEtLjE5OCAwLS41Mi4wNzQtLjc5Mi4zNzItLjI3Mi4y\nOTctMS4wNCAxLjAxNi0xLjA0IDIuNDc5IDAgMS40NjIgMS4wNjUgMi44NzUg\nMS4yMTMgMy4wNzQuMTQ5LjE5OCAyLjA5NiAzLjIgNS4wNzcgNC40ODcuNzA5\nLjMwNiAxLjI2Mi40ODkgMS42OTQuNjI1LjcxMi4yMjcgMS4zNi4xOTUgMS44\nNzEuMTE4LjU3MS0uMDg1IDEuNzU4LS43MTkgMi4wMDYtMS40MTMuMjQ4LS42\nOTQuMjQ4LTEuMjg5LjE3My0xLjQxMy0uMDc0LS4xMjQtLjI3Mi0uMTk4LS41\nNy0uMzQ3bS01LjQyMSA3LjQwM2gtLjAwNGE5Ljg3IDkuODcgMCAwMS01LjAz\nMS0xLjM3OGwtLjM2MS0uMjE0LTMuNzQxLjk4Mi45OTgtMy42NDgtLjIzNS0u\nMzc0YTkuODYgOS44NiAwIDAxLTEuNTEtNS4yNmMuMDAxLTUuNDUgNC40MzYt\nOS44ODQgOS44ODgtOS44ODQgMi42NCAwIDUuMTIyIDEuMDMgNi45ODggMi44\nOThhOS44MjUgOS44MjUgMCAwMTIuODkzIDYuOTk0Yy0uMDAzIDUuNDUtNC40\nMzcgOS44ODQtOS44ODUgOS44ODRtOC40MTMtMTguMjk3QTExLjgxNSAxMS44\nMTUgMCAwMDEyLjA1IDBDNS40OTUgMCAuMTYgNS4zMzUuMTU3IDExLjg5MmMw\nIDIuMDk2LjU0NyA0LjE0MiAxLjU4OCA1Ljk0NUwuMDU3IDI0bDYuMzA1LTEu\nNjU0YTExLjg4MiAxMS44ODIgMCAwMDUuNjgzIDEuNDQ4aC4wMDVjNi41NTQg\nMCAxMS44OS01LjMzNSAxMS44OTMtMTEuODkzYTExLjgyMSAxMS44MjEgMCAw\nMC0zLjQ4LTguNDEzeiIvPjwvc3ZnPgogICAgQWdlbmRhciBwZWxvIFdoYXRz\nQXBwCiAgPC9hPgo8L3NlY3Rpb24+Cgo8cCBjbGFzcz0iZGlzY2xhaW1lciI+\nQXMgaW5mb3JtYcOnw7VlcyBkZXN0YSBww6FnaW5hIHTDqm0gY2Fyw6F0ZXIg\nZWR1Y2F0aXZvIGUgbsOjbyBzdWJzdGl0dWVtIHVtYSBjb25zdWx0YSBjbMOt\nbmljYSBwcmVzZW5jaWFsLiBSZXN1bHRhZG9zIGUgcHJhem9zIHZhcmlhbSBj\nb25mb3JtZSBjYWRhIGNhc28uPC9wPgoKPGZvb3Rlcj4KICA8cD48c3Ryb25n\nIHN0eWxlPSJjb2xvcjojZTJlOGYwOyI+RGljcsOzIE9kb250b2xvZ2lhIEVz\ncGVjaWFsaXphZGE8L3N0cm9uZz48L3A+CiAgPHA+RHJhLiBKb2ljZSBEaWNy\nw7MgwrcgQ1JPLVJKIDA1NTcwMSDCtyBNZXNxdWl0YSAvIFJKPC9wPgogIDxw\nPjxhIGhyZWY9Imh0dHBzOi8vd3d3LmRpY3JvLmNvbS5iciI+d3d3LmRpY3Jv\nLmNvbS5icjwvYT48L3A+CjwvZm9vdGVyPgo8L2JvZHk+CjwvaHRtbD4K\n",
-  "encoding": "base64",
-  "_links": {
-    "self": "https://api.github.com/repos/joicedicro/dicro-site/contents/harmonizacao-orofacial/index.html?ref=main",
-    "git": "https://api.github.com/repos/joicedicro/dicro-site/git/blobs/1d9f2ff003918d4cde5c2c0726e2d0ecc95b3682",
-    "html": "https://github.com/joicedicro/dicro-site/blob/main/harmonizacao-orofacial/index.html"
-  }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é Harmonização Orofacial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "É um conjunto de procedimentos realizados por cirurgiã-dentista habilitada, voltados para o equilíbrio estético da face e da região da boca, como preenchimento labial, toxina botulínica e bioestimuladores de colágeno. Cada caso é analisado individualmente na consulta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Harmonização Orofacial dói?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Os procedimentos costumam usar anestésico tópico ou local, e a maioria das pacientes relata desconforto leve. A sensação varia de pessoa para pessoa e é discutida durante a consulta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo dura o resultado da Harmonização Orofacial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende do procedimento: toxina botulínica costuma durar de 4 a 6 meses, enquanto preenchimentos e bioestimuladores podem durar mais tempo. O plano de manutenção é definido conforme o objetivo de cada paciente." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quem pode fazer Harmonização Orofacial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cirurgiãs-dentistas habilitadas pelo CRO podem realizar procedimentos de Harmonização Orofacial dentro do seu escopo de atuação. Na Dicró Odontologia, os procedimentos são realizados pela Dra. Aline Gatti, CRO-RJ 52552." }
+    },
+    {
+      "@type": "Question",
+      "name": "Harmonização Orofacial tem contraindicação?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Algumas condições de saúde e fases como gestação podem contraindicar certos procedimentos. A análise individual na consulta determina o que é seguro e indicado para cada paciente." }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá pra parcelar os procedimentos de Harmonização Orofacial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. A Dicró Odontologia trabalha com parcelamento e parceria com financiamento odontológico (JLfastcred) para facilitar o pagamento dos procedimentos. As condições são apresentadas na consulta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo de repouso é necessário após o procedimento?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Na maioria dos casos não há necessidade de repouso prolongado, mas alguns cuidados pós-procedimento são orientados pela equipe, como evitar exposição ao sol e atividades físicas intensas nas primeiras horas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso fazer Harmonização Orofacial se estiver amamentando?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A gestação e a amamentação costumam exigir análise cuidadosa antes de qualquer procedimento de Harmonização Orofacial. Esse histórico é levantado na consulta inicial para definir o que é seguro nesse momento." }
+},
+{
+"@type": "Question",
+"name": "Onde fazer harmonização orofacial em Mesquita RJ?",
+"acceptedAnswer": { "@type": "Answer", "text": "A Dicró Odontologia Especializada, em Mesquita/RJ, oferece Harmonização Orofacial com a Dra. Aline Gatti, CRO-RJ 52552. O consultório fica na Praça João Luiz do Nascimento, 28, Loja 2." }
+},
+{
+"@type": "Question",
+"name": "Quanto custa harmonização orofacial em Mesquita?",
+"acceptedAnswer": { "@type": "Answer", "text": "O valor depende do procedimento (preenchimento labial, toxina botulínica ou bioestimuladores) e do plano definido para cada paciente. O orçamento é apresentado na consulta com a Dra. Aline Gatti." }
 }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Dicró Odontologia Especializada",
+  "image": "https://www.dicro.com.br/logo-dicro.png",
+  "telephone": "+5521971600874",
+  "priceRange": "$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Praça João Luiz do Nascimento, 28, Loja 2",
+    "addressLocality": "Mesquita",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  },
+  "medicalSpecialty": "Dentistry",
+  "physician": {
+    "@type": "Physician",
+    "name": "Dra. Aline Gatti",
+    "identifier": "CRO-RJ 52552"
+  },
+  "openingHours": "Mo-Sa 07:00-21:00",
+  "url": "https://www.dicro.com.br/harmonizacao-orofacial/"
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7SREJMBQ6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-B7SREJMBQ6');
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], a[href*="api.whatsapp"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      gtag('event', 'whatsapp_click', {
+        event_category: 'Contato',
+        event_label: el.textContent.trim() || 'WhatsApp'
+      });
+    });
+  });
+
+});
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">Dicró Odontologia</div>
+  <div class="brand-sub">Especializada · Mesquita / RJ</div>
+</header>
+<section class="hero">
+  <h1>Harmonização Orofacial<br>em Mesquita, RJ</h1>
+  <p>Tratamentos para equilíbrio facial e valorização da beleza natural, com a Dra. Aline Gatti — CRO-RJ 52552. Agende uma consulta e tire suas dúvidas com nossa equipe.</p>
+  <a class="btn-wa" href="https://api.whatsapp.com/send/?phone=5521971600874&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20sobre%20Harmoniza%C3%A7%C3%A3o%20Orofacial.&type=phone_number&app_absent=0">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197-.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agendar consulta pelo WhatsApp
+  </a>
+</section>
+
+<section class="doctor">
+  <div class="doctor-grid">
+    <div class="portrait">
+      <img src="/img/harmonizacao/aline-gatti-perfil.jpg" alt="Dra. Aline Gatti" loading="lazy">
+    </div>
+    <div>
+      <h2>Dra. Aline Gatti</h2>
+      <p>Cirurgiã-dentista com atuação em Harmonização Orofacial, oferecendo tratamentos voltados para rejuvenescimento, equilíbrio facial e valorização da beleza natural — agora na Dicró Odontologia Especializada.</p>
+      <span class="cro-badge">CRO-RJ 52552</span>
+      <ul class="services-list">
+        <li>Preenchimento labial</li>
+        <li>Toxina botulínica (Botox)</li>
+        <li>Bioestimuladores de colágeno</li>
+        <li>Skinbooster</li>
+        <li>Fios de sustentação</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <h2>Por que fazer Harmonização Orofacial na Dicró</h2>
+  <p class="subtitle">Procedimentos realizados por cirurgiã-dentista habilitada, dentro da própria clínica</p>
+  <div class="cards">
+    <div class="card"><div class="icon">✨</div><h3>Resultado natural</h3><p>Procedimentos planejados para valorizar suas características, sem exageros.</p></div>
+    <div class="card"><div class="icon">📍</div><h3>Atendimento em Mesquita</h3><p>Consultório no centro de Mesquita/RJ, próximo de quem vive na Baixada Fluminense.</p></div>
+    <div class="card"><div class="icon">📋</div><h3>Análise individual</h3><p>Plano de tratamento conversado e explicado antes de qualquer procedimento.</p></div>
+    <div class="card"><div class="icon">🏥</div><h3>Profissional habilitada</h3><p>Procedimentos realizados pela Dra. Aline Gatti, CRO-RJ 52552.</p></div>
+  </div>
+</section>
+
+
+
+<section class="faq">
+  <h2>Dúvidas frequentes sobre Harmonização Orofacial</h2>
+  <p class="subtitle">Respostas gerais — seu caso é analisado individualmente na consulta</p>
+  <div class="faq-item"><h3>O que é Harmonização Orofacial?</h3><p>É um conjunto de procedimentos realizados por cirurgiã-dentista habilitada, voltados para o equilíbrio estético da face e da região da boca, como preenchimento labial, toxina botulínica e bioestimuladores de colágeno.</p></div>
+  <div class="faq-item"><h3>Harmonização Orofacial dói?</h3><p>Os procedimentos costumam usar anestésico tópico ou local, e a maioria das pacientes relata desconforto leve. A sensação varia de pessoa para pessoa.</p></div>
+  <div class="faq-item"><h3>Quanto tempo dura o resultado?</h3><p>Depende do procedimento: toxina botulínica costuma durar de 4 a 6 meses, enquanto preenchimentos e bioestimuladores podem durar mais tempo.</p></div>
+  <div class="faq-item"><h3>Quem realiza os procedimentos?</h3><p>Na Dicró Odontologia, os procedimentos são realizados pela Dra. Aline Gatti, cirurgiã-dentista CRO-RJ 52552, habilitada para atuação em Harmonização Orofacial.</p></div>
+  <div class="faq-item"><h3>Tem contraindicação?</h3><p>Algumas condições de saúde e fases como gestação podem contraindicar certos procedimentos. A análise individual na consulta determina o que é seguro e indicado.</p></div>
+  <div class="faq-item"><h3>Dá pra parcelar os procedimentos?</h3><p>Sim. A Dicró Odontologia trabalha com parcelamento e parceria com financiamento odontológico (JLfastcred) para facilitar o pagamento. As condições são apresentadas na consulta.</p></div>
+  <div class="faq-item"><h3>Quanto tempo de repouso é necessário após o procedimento?</h3><p>Na maioria dos casos não há repouso prolongado, mas alguns cuidados são orientados pela equipe, como evitar sol e atividades físicas intensas nas primeiras horas.</p></div>
+  <div class="faq-item"><h3>Posso fazer se estiver amamentando?</h3><p>A gestação e a amamentação costumam exigir análise cuidadosa antes do procedimento. Esse histórico é levantado na consulta inicial para definir o que é seguro nesse momento.</p></div>
+</section>
+
+<section class="cta-section">
+  <h2>Quer saber qual procedimento é indicado pra você?</h2>
+  <p>Fale com nossa equipe pelo WhatsApp e agende uma consulta com a Dra. Aline Gatti na Dicró Odontologia, em Mesquita/RJ.</p>
+  <div class="info-badges">
+    <span class="badge">📍 Mesquita / RJ</span>
+    <span class="badge">⏰ Seg–Sáb</span>
+    <span class="badge">✅ Resposta rápida</span>
+    <span class="badge">🏥 CRO-RJ 52552</span>
+  </div>
+  <a class="btn-wa" style="margin:0 auto;" href="https://api.whatsapp.com/send/?phone=5521971600874&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20sobre%20Harmoniza%C3%A7%C3%A3o%20Orofacial.&type=phone_number&app_absent=0">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197-.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agendar pelo WhatsApp
+  </a>
+</section>
+
+<p class="disclaimer">As informações desta página têm caráter educativo e não substituem uma consulta clínica presencial. Resultados e prazos variam conforme cada caso.</p>
+
+<footer>
+  <p><strong style="color:#e2e8f0;">Dicró Odontologia Especializada</strong></p>
+  <p>Dra. Joice Dicró · CRO-RJ 055701 · Mesquita / RJ</p>
+  <p><a href="https://www.dicro.com.br">www.dicro.com.br</a></p>
+</footer>
+</body>
+</html>
