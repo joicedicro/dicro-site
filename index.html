@@ -279,6 +279,12 @@ nav{display:flex;align-items:center;justify-content:flex-end;gap:32px;height:84p
 .card p{font-size:.94rem;color:var(--mist)}
 .card .tooth{width:42px;height:42px;border-radius:12px;background:var(--navy);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:18px}
 
+.whitening-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);margin-top:24px;padding:0;overflow:hidden}
+.whitening-feature img{display:block;width:100%;height:auto;aspect-ratio:1672/941;align-self:center}
+.whitening-feature .card-body{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:32px}
+.whitening-feature .btn{margin-top:20px}
+@media(max-width:760px){.whitening-feature{grid-template-columns:1fr}.whitening-feature .card-body{padding:26px}}
+
 /* Doctor */
 .doctor{background:var(--navy);color:var(--ivory)}
 .doctor-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
@@ -402,7 +408,14 @@ footer strong{color:var(--gold-soft)}
         </div>
       </a>
     </div>
-    <p style="margin-top:24px"><a href="/clareamento-dental-mesquita/" style="color:var(--navy);font-weight:600;text-decoration:underline">Clareamento Dental — Saiba mais</a></p>
+    <div class="card whitening-feature">
+      <img src="/clareamento.png" alt="Clareamento dental realizado no consultório" width="1672" height="941" loading="lazy">
+      <div class="card-body">
+        <h3>Clareamento Dental</h3>
+        <p>Clareamento realizado no consultório, com avaliação prévia e acompanhamento profissional.</p>
+        <a class="btn" href="/clareamento-dental-mesquita/">Saiba mais →</a>
+      </div>
+    </div>
   </div>
 </section>
 
