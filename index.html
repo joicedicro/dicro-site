@@ -19,11 +19,15 @@
   "url": "https://www.dicro.com.br",
   "telephone": "+5521971600874",
   "priceRange": "$$",
-  "image": ["https://www.dicro.com.br/recepcao-fundo.jpg","https://www.dicro.com.br/recepcao2.jpg","https://www.dicro.com.br/fachada2.jpg"],
+  "image": [
+    "https://www.dicro.com.br/recepcao-fundo.jpg",
+    "https://www.dicro.com.br/recepcao2.jpg",
+    "https://www.dicro.com.br/fachada2.jpg"
+  ],
   "logo": "https://www.dicro.com.br/logo-dicro.png",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Praça João Luiz do Nascimento, 124, Loja 2",
+    "streetAddress": "Praça João Luiz do Nascimento, 124 — Loja 2, Centro",
     "addressLocality": "Mesquita",
     "addressRegion": "RJ",
     "postalCode": "26551-530",
@@ -35,25 +39,43 @@
     "longitude": -43.4275274
   },
   "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"},
-    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Saturday"],"opens": "09:00","closes": "13:00"}
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
   ],
-  "medicalSpecialty": ["Orthodontics","Prosthodontics","Oral and Maxillofacial Surgery","General Dentistry"],
   "employee": {
-    "@type": "Physician",
+    "@type": "Person",
+    "@id": "https://www.dicro.com.br/#joice-dicro",
     "name": "Dra. Joice Dicró",
-    "medicalSpecialty": "Orthodontics",
+    "jobTitle": "Cirurgiã-Dentista",
     "identifier": "CRO-RJ 055701",
-    "telephone": "+5521971600874",
-    "priceRange": "$$",
-    "image": "https://www.dicro.com.br/joice.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Praça João Luiz do Nascimento, 124, Loja 2",
-      "addressLocality": "Mesquita",
-      "addressRegion": "RJ",
-      "postalCode": "26551-530",
-      "addressCountry": "BR"
+    "worksFor": {
+      "@id": "https://www.dicro.com.br/#clinica"
     }
   },
   "aggregateRating": {
@@ -64,16 +86,58 @@
     "worstRating": "1"
   },
   "review": [
-    {"@type": "Review","author": {"@type": "Person","name": "Daniele Souza Dani"},"reviewRating": {"@type": "Rating","ratingValue": "5"},"reviewBody": "Parabéns pelo consultório muito bonito e organizado. A Dra Joice Dicró foi muito atenciosa e deixou meu sorriso perfeito."},
-    {"@type": "Review","author": {"@type": "Person","name": "Joao Vitor"},"reviewRating": {"@type": "Rating","ratingValue": "5"},"reviewBody": "Atendimento excelente! A Dra. Joice é muito simpática e profissional. Clínica organizada e acolhedora."},
-    {"@type": "Review","author": {"@type": "Person","name": "Marcia Menezes"},"reviewRating": {"@type": "Rating","ratingValue": "5"},"reviewBody": "Gostei muito do atendimento e eficiência. Recepcionistas muito educados e atenciosos. Recomendo."}
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Daniele Souza Dani"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Parabéns pelo consultório muito bonito e organizado. A Dra Joice Dicró foi muito atenciosa e deixou meu sorriso perfeito."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Joao Vitor"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Atendimento excelente! A Dra. Joice é muito simpática e profissional. Clínica organizada e acolhedora."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Marcia Menezes"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Gostei muito do atendimento e eficiência. Recepcionistas muito educados e atenciosos. Recomendo."
+    }
   ],
   "sameAs": [
     "https://www.instagram.com/dicro.odontologia/",
     "https://www.facebook.com/dicro.odontologia",
     "https://search.google.com/local/writereview?placeid=ChIJo-snEwBnmQAR_3cuxIru0TM"
   ],
-  "hasMap": "https://www.google.com/maps/search/?api=1&query=Dicr%C3%B3%20Odontologia%20Especializada&query_place_id=ChIJo-snEwBnmQAR_3cuxIru0TM"
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Dicr%C3%B3%20Odontologia%20Especializada&query_place_id=ChIJo-snEwBnmQAR_3cuxIru0TM",
+  "@id": "https://www.dicro.com.br/#clinica",
+  "areaServed": {
+    "@type": "City",
+    "name": "Mesquita",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Rio de Janeiro"
+    }
+  }
 }
 </script>
 <!-- OPEN GRAPH -->
@@ -513,6 +577,8 @@ footer strong{color:var(--gold-soft)}
     </div>
     <div><a href="https://www.google.com/maps/search/?api=1&query=Dicr%C3%B3%20Odontologia%20Especializada&query_place_id=ChIJo-snEwBnmQAR_3cuxIru0TM" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Praça João Luiz do Nascimento, 124 — Loja 2, Centro — Mesquita/RJ</a></div>
   </div>
+<p>Segunda a sexta, 9h às 18h · Sábado, 9h às 13h · Domingo: fechado</p>
+<p>WhatsApp: <a href="https://wa.me/5521971600874">(21) 97160-0874</a></p>
 </footer>
 
 <a class="wa-float" href="https://wa.me/5521971600874?text=Gostaria%20de%20agendar%20minha%20consulta." aria-label="Conversar no WhatsApp">
