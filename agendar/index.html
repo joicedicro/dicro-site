@@ -3,11 +3,47 @@
 <head>
 <meta name="robots" content="noindex, follow">
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=https://app.simplesdental.com/simples/agendamento/dicro">
+  <!-- Fallback sem JavaScript: redireciona em 3 s -->
+  <meta http-equiv="refresh" content="3;url=https://app.simplesdental.com/simples/agendamento/dicro">
   <title>Agendamento Online – Dicró Odontologia</title>
 </head>
 <body>
   <p>Redirecionando para o agendamento online...</p>
-  <script>window.location.replace("https://app.simplesdental.com/simples/agendamento/dicro");</script>
+  <p><a href="https://app.simplesdental.com/simples/agendamento/dicro">Clique aqui se não for redirecionado</a></p>
+  <script>
+  (function () {
+    var DESTINO = 'https://app.simplesdental.com/simples/agendamento/dicro';
+    var foi = false;
+    function ir() { if (foi) return; foi = true; window.location.replace(DESTINO); }
+    // Segurança: o agendamento nunca espera mais de 1,2 s pelo Analytics
+    setTimeout(ir, 1200);
+
+    // Evita contagem dupla sem janela de tempo: o script do site acrescenta ?ag=b
+    // somente no clique do botão (que já foi contado). Qualquer outro acesso conta.
+    var interno = false;
+    try { interno = new URLSearchParams(location.search).get('ag') === 'b'; } catch (e) {}
+    if (interno) { ir(); return; }
+
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', 'G-B7SREJMBQ6', { anonymize_ip: true, send_page_view: false });
+      gtag('event', 'agendamento_online_click', {
+        event_category: 'Agendamento',
+        event_label: 'Agendamento online',
+        origem: 'acesso_direto',
+        transport_type: 'beacon',
+        event_callback: ir,
+        event_timeout: 1000
+      });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-B7SREJMBQ6';
+      s.onerror = ir;
+      document.head.appendChild(s);
+    } catch (e) { ir(); }
+  })();
+  </script>
 </body>
 </html>
