@@ -554,10 +554,8 @@ window.addEventListener('load',function(){!function(f,b,e,v,n,t,s){if(f.fbq)retu
 <script>
 (function(){var c=document.getElementById('trustindex-container');if(!c)return;new IntersectionObserver(function(e,o){if(e[0].isIntersecting){var s=document.createElement('script');s.src=c.getAttribute('data-src');s.defer=true;document.body.appendChild(s);o.disconnect();}},{rootMargin:'200px'}).observe(c);})();
 </script>
-<!-- GA4 agendamento online -->
-<script>
-document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href="https://dicro.com.br/agendar"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag!=='undefined')gtag('event','agendamento_online_click',{event_category:'Agendamento',event_label:'Agendamento online'});});});});
-</script>
+<!-- GA4 agendamento online (script compartilhado) -->
+<script src="/js/agendamento.js" defer></script>
 </body>
 </html>
 <!-- Versão de comparação: publicada em /novo. Quando aprovada, mover este arquivo para a raiz do repositório substituindo o index.html atual. -->

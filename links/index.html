@@ -257,18 +257,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   });
 
-  document.querySelectorAll('a[href="https://dicro.com.br/agendar"]').forEach(function(el) {
-
-    el.addEventListener('click', function() {
-
-      gtag('event', 'agendamento_online_click', {
-        event_category: 'Agendamento',
-        event_label: 'Agendamento online'
-      });
-
-    });
-
-  });
 
   document.querySelectorAll('a[href*="dicro.com.br"]:not([href*="wa.me"])').forEach(function(el) {
 
@@ -286,6 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script src="/js/agendamento.js" defer></script>
 </head>
 <body>
 <div class="card">
