@@ -32,3 +32,10 @@ Data: 2026-11-01. Este documento e a página da Dra. Joice foram preparados apen
 - [ ] Atualizar sitemap e navegação somente com aprovação
 - [ ] Testar eventos de conversão no GA4
 - [ ] Solicitar autorização explícita para mesclar/publicar
+
+## Atualização — 2026-11-01
+- Inseridos links contextuais nos três artigos, somente na branch de teste. Não foram alterados os links de WhatsApp nem o script `js/agendamento.js`.
+- Revisão clínica pendente: artigo sobre dor afirma ausência absoluta de dor durante anestesia; preferir redação individualizada após aprovação da Dra. Joice.
+- Revisão clínica pendente: artigo sobre diferenças entre implante e prótese contém simplificações sobre apoio e higiene das próteses.
+- Página profissional é rascunho: confirmar formação, título profissional e texto antes de publicar.
+- Sitemap e navegação principal ainda não foram alterados. Publicação requer autorização específica.
