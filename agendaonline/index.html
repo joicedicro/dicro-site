@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agendamento Online – Dicró Odontologia</title>
-  <meta http-equiv="refresh" content="0; url=https://dicro.com.br/agendar">
+  <!-- Sem JavaScript: fallback simples (o JS abaixo preserva UTM, gclid e demais parâmetros) -->
+  <noscript><meta http-equiv="refresh" content="0; url=/agendar/"></noscript>
   <meta name="robots" content="noindex, nofollow">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
@@ -25,9 +26,16 @@
     <div class="logo">Dicró<span>.</span></div>
     <div class="spinner"></div>
     <p>Redirecionando para o <strong>Agendamento Online</strong>…</p>
-    <a class="btn" href="https://dicro.com.br/agendar">Clique aqui se não for redirecionado</a>
+    <a class="btn" id="ir-agendar" href="/agendar/">Clique aqui se não for redirecionado</a>
     <div class="footer">Dicró Odontologia · Mesquita, RJ</div>
   </div>
-  <script>window.location.replace("https://dicro.com.br/agendar");</script>
+  <script>
+  // Mantém todos os parâmetros recebidos (UTM, gclid, fbclid etc.) e fica no mesmo domínio.
+  (function () {
+    var destino = '/agendar/' + location.search + location.hash;
+    try { document.getElementById('ir-agendar').setAttribute('href', destino); } catch (e) {}
+    window.location.replace(destino);
+  })();
+  </script>
 </body>
 </html>

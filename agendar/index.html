@@ -28,7 +28,9 @@
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { dataLayer.push(arguments); };
       gtag('js', new Date());
-      gtag('config', 'G-B7SREJMBQ6', { anonymize_ip: true, send_page_view: false });
+      // page_view com a URL completa (UTM, gclid etc.) para o GA4 registrar a origem do acesso.
+      // Só acontece aqui, nos acessos de fora do site; cliques internos (?ag=b) saem acima sem enviar nada.
+      gtag('config', 'G-B7SREJMBQ6', { anonymize_ip: true, send_page_view: true });
       gtag('event', 'agendamento_online_click', {
         event_category: 'Agendamento',
         event_label: 'Agendamento online',
